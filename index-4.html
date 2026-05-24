@@ -1,0 +1,2738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parentee: Your calm, knowledgeable parenting companion</title>
+<meta name="description" content="Parentee is a warm, AI parenting companion. Personalised, judgment-free guidance for routines, meals, milestones and the everyday moments of raising a child.">
+<meta property="og:title" content="Parentee: Your calm parenting companion">
+<meta property="og:description" content="Personalised, judgment-free parenting guidance, anytime you need it.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FAFAF8">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="keywords" content="AI parenting app, parenting companion, parenting advice app, AI for parents, baby care app, toddler behaviour help, meal planning kids, school email drafts, parenting assistant, personalised parenting">
+<link rel="canonical" href="https://parentee.app/">
+<link rel="alternate" hreflang="en" href="https://parentee.app/">
+<link rel="alternate" hreflang="es" href="https://parentee.app/es/">
+<link rel="alternate" hreflang="fr" href="https://parentee.app/fr/">
+<link rel="alternate" hreflang="de" href="https://parentee.app/de/">
+<link rel="alternate" hreflang="pt" href="https://parentee.app/pt/">
+<link rel="alternate" hreflang="tr" href="https://parentee.app/tr/">
+<link rel="alternate" hreflang="x-default" href="https://parentee.app/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper-0:#FFFFFF; --paper-50:#FAFAF8; --paper-100:#F1EFE8; --paper-200:#E5E3DC;
+    --paper-300:#D5D1C8; --paper-600:#5F5E5A; --paper-800:#30302E; --paper-900:#1A1A18;
+    --teal-50:#E1F5EE; --teal-100:#9FE1CB; --teal-400:#1D9E75; --teal-600:#0F6E56; --teal-900:#04342C;
+    --sand-50:#F5EFE4; --sand-100:#E4CFA6; --sand-400:#B4823C; --sand-600:#7A5418;
+    --iris-50:#ECE9F6; --iris-100:#C4BAE5; --iris-400:#6A56C9; --iris-600:#473688;
+    --bg:var(--paper-50);
+    --font-display:'Fraunces',Georgia,serif;
+    --font-body:'Inter',-apple-system,sans-serif;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--font-body);background:var(--bg);color:var(--paper-900);
+    line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .serif{font-family:var(--font-display)}
+
+  /* skip link */
+  .skip-link{position:absolute;left:-9999px;top:8px;z-index:999;padding:8px 16px;
+    background:var(--teal-600);color:#fff;border-radius:8px;font-weight:600;font-size:14px}
+  .skip-link:focus{left:8px}
+
+  /* touch targets */
+  .btn{touch-action:manipulation}
+
+  /* heading text-wrap */
+  h1,h2,h3,h4{text-wrap:balance}
+
+  /* tabular nums for prices */
+  .price,.price span{font-variant-numeric:tabular-nums}
+
+  /* scroll margin so sticky nav doesn't clip anchors */
+  section[id],div[id]{scroll-margin-top:80px}
+
+  /* reduced — three.js handles the atmosphere */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.2;
+    background:
+      radial-gradient(ellipse 80% 50% at 80% -10%, var(--teal-50), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 5% 30%, var(--sand-50), transparent 55%);
+  }
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(12px);
+    background:rgba(250,250,248,.82);border-bottom:1px solid var(--paper-200)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);
+    font-weight:600;font-size:21px;letter-spacing:-.01em}
+  .logo-mark{width:38px;height:38px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .logo-mark img,.logo-mark svg{width:38px;height:38px}
+  .nav-links{display:flex;align-items:center;gap:30px;font-size:15px;font-weight:500;color:var(--paper-600)}
+  .nav-links a:hover{color:var(--teal-600)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);
+    font-weight:600;font-size:15px;border-radius:100px;padding:12px 22px;cursor:pointer;
+    border:none;transition:transform .15s ease,box-shadow .2s ease,background .2s ease}
+  .btn-primary{background:var(--teal-600);color:#fff}
+  .btn-primary:hover{background:var(--teal-900);transform:translateY(-1px);box-shadow:0 8px 24px rgba(15,110,86,.28)}
+  .btn-ghost{background:transparent;color:var(--paper-900);border:1px solid var(--paper-300)}
+  .btn-ghost:hover{border-color:var(--teal-600);color:var(--teal-600)}
+  .nav-cta{display:flex;gap:12px;align-items:center}
+
+  /* hero */
+  header.hero{padding:90px 0 70px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--teal-600);
+    background:var(--teal-50);padding:7px 14px;border-radius:100px;margin-bottom:22px}
+  h1.hero-title{font-family:var(--font-display);font-weight:500;font-size:clamp(40px,6vw,68px);
+    line-height:1.04;letter-spacing:-.02em;margin-bottom:22px}
+  h1.hero-title em{font-style:italic;color:var(--teal-600)}
+  .hero-sub{font-size:19px;color:var(--paper-600);max-width:480px;margin-bottom:32px;line-height:1.6}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-note{font-size:14px;color:var(--paper-600);margin-top:18px;display:flex;align-items:center;gap:8px}
+  .hero-note svg{width:16px;height:16px;color:var(--teal-400)}
+
+  /* phone mock */
+  .phone-stage{position:relative;display:flex;justify-content:center;perspective:1200px}
+  .blob{position:absolute;width:380px;height:380px;border-radius:46% 54% 60% 40%/52% 44% 56% 48%;
+    background:linear-gradient(150deg,var(--sand-100),var(--teal-100));opacity:.55;
+    top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;animation:blobfloat 9s ease-in-out infinite}
+  @keyframes blobfloat{50%{transform:translate(-50%,-54%) rotate(6deg)}}
+  .phone{position:relative;z-index:1;width:288px;background:#11100E;border-radius:42px;
+    padding:11px;box-shadow:0 30px 70px -18px rgba(26,26,24,.45);
+    transition:transform .2s cubic-bezier(0.23,1,0.32,1);will-change:transform}
+  .phone-screen{background:var(--paper-100);border-radius:32px;overflow:hidden;height:580px;position:relative}
+  .ph-top{padding:22px 20px 14px;background:var(--paper-50)}
+  .ph-eyebrow{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sand-600)}
+  .ph-greet{font-family:var(--font-display);font-size:23px;font-weight:500;margin-top:4px;color:var(--paper-900)}
+  .ph-greet span{color:var(--teal-600)}
+  .ph-body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:12px}
+  .bubble{padding:13px 15px;border-radius:18px;font-size:13.5px;line-height:1.5;max-width:88%}
+  .bubble.user{align-self:flex-end;background:var(--teal-600);color:#fff;border-bottom-right-radius:6px}
+  .bubble.ai{align-self:flex-start;background:#fff;color:var(--paper-900);border-bottom-left-radius:6px;
+    box-shadow:0 2px 10px rgba(26,26,24,.05);border:1px solid var(--paper-200)}
+  .bubble.ai b{color:var(--teal-600);font-weight:600}
+  .ph-chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:4px}
+  .chip{font-size:11.5px;background:var(--sand-50);color:var(--sand-600);border:1px solid var(--sand-100);
+    padding:6px 11px;border-radius:100px;font-weight:500}
+  .ph-orb{width:9px;height:9px;border-radius:50%;background:var(--teal-400);display:inline-block;margin-right:6px;
+    opacity:1;animation:pulse 2s infinite}
+  @keyframes pulse{0%{opacity:1}70%{opacity:.2}100%{opacity:1}}
+
+  /* trust strip */
+  .trust{border-top:1px solid var(--paper-200);border-bottom:1px solid var(--paper-200);
+    background:rgba(255,255,255,.6)}
+  .trust-in{display:flex;justify-content:space-between;gap:24px;padding:26px 0;flex-wrap:wrap}
+  .trust-item{display:flex;align-items:center;gap:11px;font-size:14.5px;color:var(--paper-600);font-weight:500}
+  .trust-item svg{width:20px;height:20px;color:var(--teal-600);flex-shrink:0}
+
+  /* sections */
+  section{padding:92px 0}
+  .sec-head{max-width:640px;margin-bottom:54px}
+  .sec-head .eyebrow{margin-bottom:16px}
+  h2{font-family:var(--font-display);font-weight:500;font-size:clamp(30px,4vw,46px);
+    line-height:1.1;letter-spacing:-.02em;margin-bottom:18px}
+  .sec-head p{font-size:18px;color:var(--paper-600)}
+
+  /* features grid with perspective for child 3D transforms */
+  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;perspective:1400px;perspective-origin:50% 0%}
+
+  /* card — 3D tilt enabled */
+  .card{background:#fff;border:1px solid var(--paper-200);border-radius:22px;padding:30px 26px;
+    position:relative;overflow:hidden;
+    will-change:transform;
+    transition:box-shadow .25s ease}
+
+  /* tilt shine overlay — position controlled via --sx/--sy css vars set by JS */
+  .tilt-shine{
+    position:absolute;inset:0;pointer-events:none;z-index:4;border-radius:inherit;
+    background:radial-gradient(circle at var(--sx,50%) var(--sy,50%),rgba(255,255,255,.22) 0%,transparent 55%);
+    opacity:0;transition:opacity .28s;
+  }
+
+  .ic{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+  .ic svg{width:26px;height:26px}
+  .ic.teal{background:var(--teal-50);color:var(--teal-600)}
+  .ic.sand{background:var(--sand-50);color:var(--sand-600)}
+  .ic.iris{background:var(--iris-50);color:var(--iris-600)}
+  .card h3{font-family:var(--font-display);font-weight:600;font-size:21px;margin-bottom:10px;letter-spacing:-.01em}
+  .card p{font-size:15px;color:var(--paper-600);line-height:1.6}
+
+  /* how it works */
+  .how{background:var(--teal-900);color:var(--paper-50);border-radius:36px;padding:70px 56px;position:relative;overflow:hidden}
+  .how::after{content:"";position:absolute;width:340px;height:340px;border-radius:50%;
+    background:radial-gradient(circle,rgba(159,225,203,.18),transparent 70%);top:-80px;right:-60px}
+  .how .eyebrow{background:rgba(159,225,203,.16);color:var(--teal-100)}
+  .how h2{color:#fff}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:46px}
+  .step{position:relative}
+  .step-n{font-family:var(--font-display);font-size:15px;font-weight:600;color:var(--teal-100);
+    width:38px;height:38px;border:1px solid rgba(159,225,203,.4);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .step h4{font-family:var(--font-display);font-weight:500;font-size:20px;margin-bottom:8px}
+  .step p{color:rgba(241,239,232,.72);font-size:15px}
+
+  /* pricing */
+  .bill-toggle{display:inline-flex;background:var(--paper-100);border:1px solid var(--paper-200);
+    border-radius:100px;padding:5px;margin-bottom:42px;gap:4px}
+  .bill-toggle button{border:none;background:transparent;font-family:var(--font-body);font-weight:600;
+    font-size:14px;padding:9px 20px;border-radius:100px;cursor:pointer;color:var(--paper-600);transition:.2s}
+  .bill-toggle button.on{background:#fff;color:var(--teal-600);box-shadow:0 2px 8px rgba(26,26,24,.08)}
+  .save-tag{font-size:12px;color:var(--sand-600);font-weight:600;margin-left:4px}
+
+  /* plans grid with perspective */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start;perspective:1400px;perspective-origin:50% 0%}
+
+  /* plan — 3D tilt enabled */
+  .plan{background:#fff;border:1px solid var(--paper-200);border-radius:24px;padding:32px 28px;
+    position:relative;overflow:hidden;will-change:transform;transition:box-shadow .25s ease}
+  .plan.featured{border:2px solid var(--teal-600);box-shadow:0 20px 50px -24px rgba(15,110,86,.4)}
+  .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--teal-600);
+    color:#fff;font-size:12px;font-weight:600;padding:5px 14px;border-radius:100px;letter-spacing:.02em}
+  .plan-name{font-family:var(--font-display);font-weight:600;font-size:23px;margin-bottom:4px}
+  .plan-tag{font-size:14px;color:var(--paper-600);margin-bottom:20px;min-height:20px}
+  .price{font-family:var(--font-display);font-size:46px;font-weight:500;line-height:1;letter-spacing:-.02em}
+  .price small{font-size:16px;color:var(--paper-600);font-weight:400;font-family:var(--font-body)}
+  .price-sub{font-size:13px;color:var(--sand-600);font-weight:600;margin-top:8px;min-height:18px}
+  .plan ul{list-style:none;margin:24px 0 28px;display:flex;flex-direction:column;gap:12px}
+  .plan li{display:flex;gap:10px;font-size:14.5px;color:var(--paper-800);align-items:flex-start}
+  .plan li svg{width:18px;height:18px;color:var(--teal-400);flex-shrink:0;margin-top:2px}
+  .plan .btn{width:100%;justify-content:center}
+
+  /* cta */
+  .final{text-align:center;padding:96px 0}
+  .final h2{font-size:clamp(32px,5vw,56px);margin-bottom:20px}
+  .final p{font-size:19px;color:var(--paper-600);max-width:520px;margin:0 auto 34px}
+
+  /* footer */
+  footer{border-top:1px solid var(--paper-200);padding:54px 0 40px;background:rgba(255,255,255,.5)}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px}
+  .foot-brand p{font-size:14.5px;color:var(--paper-600);max-width:280px;margin-top:14px}
+  .foot-col h5{font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--paper-900);margin-bottom:16px}
+  .foot-col a{display:block;font-size:14.5px;color:var(--paper-600);margin-bottom:11px}
+  .foot-col a:hover{color:var(--teal-600)}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+    padding-top:26px;border-top:1px solid var(--paper-200);font-size:13.5px;color:var(--paper-600)}
+  .foot-disc{font-size:12.5px;color:var(--paper-600);max-width:780px;line-height:1.6;margin-top:18px;
+    padding:16px 18px;background:var(--paper-100);border-radius:14px}
+
+  /* reveal — base */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* cards get 3D flip-in from below */
+  .card.reveal{
+    transform:translateY(40px) rotateX(22deg);
+    transform-origin:bottom center;
+    transition:opacity .75s ease, transform .9s cubic-bezier(0.22,1,0.36,1);
+  }
+  .card.reveal.in{transform:none}
+
+  /* 3D logo hero canvas */
+  #logo3d{display:block;border-radius:20px;margin-bottom:26px}
+
+  /* feature click-to-3D modal */
+  /* feature showcase — 2-column: canvas left, card list right */
+  .feat-showcase{display:grid;grid-template-columns:1.15fr 0.85fr;gap:32px;align-items:start}
+  .feat-stage{position:sticky;top:88px}
+  #feat-cvs{width:100%;height:380px;border-radius:24px;display:block;
+    background:transparent;box-shadow:none}
+  .feat-info{padding:18px 2px 10px}
+  .feat-info-label{font-family:var(--font-display);font-weight:600;font-size:21px;
+    letter-spacing:-.01em;margin-bottom:6px;min-height:28px}
+  .feat-info-sub{font-size:14px;color:var(--paper-600);line-height:1.55;min-height:40px}
+  .feat-dots{display:flex;gap:7px;margin-top:14px}
+  .feat-dot{width:8px;height:8px;border-radius:50%;background:var(--paper-300);
+    cursor:pointer;transition:background .35s,transform .25s}
+  .feat-dot.on{background:var(--teal-600);transform:scale(1.25)}
+  /* feature card list on the right */
+  .feat-cards{display:flex;flex-direction:column;gap:10px}
+  .feat-cards .card{padding:13px 18px;cursor:pointer;
+    transition:border-color .3s,background .3s,box-shadow .3s,transform .2s,opacity .75s}
+  .feat-cards .card:hover{transform:translateX(3px)}
+  .feat-cards .card.on{
+    border-color:var(--teal-400);background:var(--teal-50);
+    box-shadow:0 6px 24px -8px rgba(29,158,117,.18);transform:translateX(4px)}
+  .feat-cards .card h3{font-size:16px;margin:0;font-weight:500}
+
+  /* neighbourhood city canvas */
+  #city-canvas{width:100%;height:440px;border-radius:28px;display:block;cursor:pointer}
+  .city-legend{display:flex;justify-content:space-around;margin-top:20px;flex-wrap:wrap;gap:12px}
+  .city-legend a{font-size:14px;font-weight:600;color:var(--paper-600);display:flex;align-items:center;gap:8px}
+  .city-legend a.top{color:var(--teal-600)}
+  .city-dot{width:10px;height:10px;border-radius:50%;background:var(--paper-300)}
+  .city-dot.top{background:var(--teal-600)}
+
+  /* plan popup card */
+  #plan-panel{margin-top:22px;opacity:0;transform:translateY(16px);
+    transition:opacity .4s ease,transform .45s cubic-bezier(0.22,1,0.36,1);pointer-events:none}
+  #plan-panel.vis{opacity:1;transform:none;pointer-events:auto}
+  .plan-popup{background:#fff;border:1.5px solid var(--paper-200);border-radius:22px;
+    padding:24px 28px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+    box-shadow:0 8px 32px -8px rgba(26,26,24,.12)}
+  .plan-popup.feat{border-color:var(--teal-600);box-shadow:0 12px 40px -10px rgba(15,110,86,.22)}
+  .pp-meta{min-width:150px}
+  .pp-name{font-family:var(--font-display);font-size:22px;font-weight:600;letter-spacing:-.01em;margin-bottom:4px}
+  .pp-price{font-family:var(--font-display);font-size:40px;font-weight:500;line-height:1;letter-spacing:-.02em}
+  .pp-price small{font-size:15px;color:var(--paper-600);font-weight:400;font-family:var(--font-body)}
+  .pp-billing{font-size:12px;color:var(--sand-600);font-weight:600;margin-top:6px}
+  .pp-features{list-style:none;flex:1;display:flex;flex-wrap:wrap;gap:9px 22px;padding:0}
+  .pp-features li{font-size:14px;color:var(--paper-800);display:flex;align-items:center;gap:8px}
+  .pp-features li svg{width:16px;height:16px;color:var(--teal-400);flex-shrink:0}
+  .pp-hint{font-size:12px;color:var(--paper-600);margin-top:14px;text-align:center}
+  @media(max-width:600px){.plan-popup{flex-direction:column;gap:16px}}
+
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+    .blob{animation:none}
+    .ph-orb{animation:none}
+    .reveal{opacity:1;transform:none;transition:none}
+    .card.reveal{transform:none;transition:none}
+  }
+
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:48px}
+    .phone-stage{order:-1}
+    .steps,.plans{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:28px}
+    .nav-links{display:none}
+    .how{padding:48px 28px}
+    section{padding:64px 0}
+    .card.reveal{transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+    /* feature showcase stacks on mobile */
+    .feat-showcase{grid-template-columns:1fr}
+    .feat-stage{position:static}
+    #feat-cvs{height:280px}
+  }
+
+  /* language selector */
+  .lang-sel{position:relative;margin-left:8px}
+  .lang-btn{display:flex;align-items:center;gap:5px;font-family:var(--font-body);font-size:13.5px;font-weight:600;color:var(--paper-600);background:transparent;border:1px solid var(--paper-200);border-radius:100px;padding:7px 12px;cursor:pointer;transition:border-color .2s,color .2s;white-space:nowrap}
+  .lang-btn:hover{border-color:var(--teal-400);color:var(--teal-600)}
+  .lang-btn svg{width:14px;height:14px;flex-shrink:0;transition:transform .2s}
+  .lang-sel.open .lang-btn svg:last-child{transform:rotate(180deg)}
+  .lang-drop{position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid var(--paper-200);border-radius:16px;padding:6px;min-width:168px;box-shadow:0 12px 32px -8px rgba(26,26,24,.14);display:none;z-index:200}
+  .lang-sel.open .lang-drop{display:block}
+  .lang-opt{display:flex;align-items:center;gap:9px;width:100%;text-align:left;font-family:var(--font-body);font-size:14px;padding:9px 12px;border:none;background:transparent;border-radius:10px;cursor:pointer;color:var(--paper-800);transition:background .15s}
+  .lang-opt:hover{background:var(--teal-50);color:var(--teal-600)}
+  .lang-opt.on{font-weight:600;color:var(--teal-600);background:var(--teal-50)}
+
+  /* faq */
+  .faq-cols{display:grid;grid-template-columns:1fr 1fr;gap:0 60px;margin-top:8px}
+  .faq-item{border-bottom:1px solid var(--paper-200)}
+  .faq-item:first-child{border-top:1px solid var(--paper-200)}
+  .faq-item summary{
+    list-style:none;display:flex;justify-content:space-between;align-items:center;
+    padding:20px 0;cursor:pointer;font-family:var(--font-display);font-weight:500;
+    font-size:17.5px;line-height:1.3;letter-spacing:-.01em;color:var(--paper-900);
+    gap:12px;user-select:none;
+  }
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::marker{display:none}
+  .faq-chevron{width:20px;height:20px;flex-shrink:0;color:var(--paper-300);
+    transition:transform .28s ease,color .2s}
+  .faq-item[open] summary{color:var(--teal-600)}
+  .faq-item[open] .faq-chevron{transform:rotate(45deg);color:var(--teal-400)}
+  .faq-ans{font-size:15px;color:var(--paper-600);line-height:1.72;padding:0 24px 22px 0}
+  .faq-ans strong{color:var(--paper-900);font-weight:600}
+  @media(max-width:760px){.faq-cols{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Parentee?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Parentee is an AI parenting companion that gives you personalised, judgment-free guidance for every stage of raising a child. Unlike a generic chatbot, Parentee remembers each child's age, allergies, routines and temperament so every answer is tailored to your family, not a one-size-fits-all forum post."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Parentee different from searching Google or asking ChatGPT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Search engines return hundreds of conflicting links; ChatGPT gives generic answers that know nothing about your child. Parentee knows your child's name, age, quirks and history. Ask 'what should Mia eat this week?' and it factors in her picky-eating stage, any intolerances you've shared, and meals you've already tried. Personalised parenting advice, not population-average advice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What kinds of questions can I ask Parentee?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Almost anything about raising your children. Parents commonly ask about sleep schedules, picky eating, meal ideas, sibling conflicts, tantrums, screen time boundaries, school and homework struggles, writing teacher emails, developmental milestones and daily routines. If it's one of the hundred small questions a day that don't warrant a doctor's appointment, Parentee is here for it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What ages does Parentee support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Parentee supports children from newborn through to 17 years old. Whether you're managing a newborn's feeding schedule, navigating toddler tantrums, or talking to a twelve-year-old about peer pressure, Parentee adapts its tone and guidance to match your child's developmental stage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Parentee help with behaviour problems like tantrums or screen time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Behaviour Coaching feature offers gentle, evidence-informed strategies for tantrums, meltdowns, back-talk, sleep resistance, sibling fights and screen time boundaries. Advice is tailored to your child's temperament and age, rather than generic tips that may not fit your situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use Parentee for more than one child?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Family plan supports up to 4 children, each with their own remembered profile. The Family+ plan extends this to 6 children and adds a co-parent invite, so both parents share the same family account. A question about your 8-year-old never gets mixed up with advice for your toddler."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Parentee replace my doctor or paediatrician?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Parentee is a parenting companion, not a medical professional. For medical, mental-health or developmental concerns, always consult a qualified healthcare provider. Parentee is here for the everyday questions, routines and decisions, not clinical diagnosis or treatment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Parentee protect my family's data and privacy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your family's data is encrypted in transit and at rest. Parentee does not sell your data or use your children's information to train AI models. You can delete your account and all associated data at any time. We are committed to GDPR and COPPA compliance, and never store sensitive information without your explicit consent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Parentee cost? Is there a free plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Parentee has a free Starter plan for one child. The Family plan is $7.42 per month (billed $89 annually) and supports up to 4 children with unlimited questions, meal plans, grocery lists and school email drafts. Family+ at $13.25 per month adds 6 children, a co-parent invite and a birthday planner. All paid plans start with a free trial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Parentee available on iPhone and Android?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Parentee is available for iPhone on the App Store now. An Android version is in development and coming later this year. Join the early-access waitlist from the download page to be notified as soon as the Android app launches."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Parentee",
+  "url": "https://parentee.app",
+  "logo": "https://parentee.app/icon.png",
+  "description": "Parentee is an AI-powered parenting companion app that provides personalised, judgment-free guidance for parents.",
+  "sameAs": [],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "support@parentee.app"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Parentee",
+  "url": "https://parentee.app",
+  "description": "AI parenting companion app for personalised, judgment-free parenting guidance.",
+  "inLanguage": ["en", "es", "fr", "de", "pt", "tr"],
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://parentee.app/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Parentee",
+  "description": "Parentee is an AI parenting companion. Personalised, judgment-free guidance for routines, meals, milestones and the everyday moments of raising a child.",
+  "operatingSystem": "iOS",
+  "applicationCategory": "LifestyleApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand">
+      <span class="logo-mark">
+        <img src="high-resolution-color-logo-3.png" alt="Parentee logo" width="38" height="38">
+      </span>
+      Parentee
+    </div>
+    <div class="nav-links">
+      <a href="#features" data-i18n="nav_features">Features</a>
+      <a href="#how" data-i18n="nav_how">How it works</a>
+      <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <div class="lang-sel" id="lang-sel">
+        <button class="lang-btn" id="lang-btn" aria-label="Select language" aria-expanded="false" aria-haspopup="listbox">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 3c-2.5 4-2.5 14 0 18M12 3c2.5 4 2.5 14 0 18M3 12h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span id="lang-cur">EN</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lang-drop" id="lang-drop" role="listbox">
+          <button class="lang-opt on" data-lang="en" role="option">English</button>
+          <button class="lang-opt" data-lang="es" role="option">Español</button>
+          <button class="lang-opt" data-lang="fr" role="option">Français</button>
+          <button class="lang-opt" data-lang="de" role="option">Deutsch</button>
+          <button class="lang-opt" data-lang="pt" role="option">Português</button>
+          <button class="lang-opt" data-lang="tr" role="option">Türkçe</button>
+        </div>
+      </div>
+      <a href="#pricing" class="btn btn-ghost" data-i18n="nav_pricing">Pricing</a>
+      <a href="#download" class="btn btn-primary" data-i18n="nav_get_app">Get the App</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal in">
+      <canvas id="logo3d" width="72" height="72"></canvas>
+      <span class="eyebrow" data-i18n="hero_eyebrow">AI parenting companion</span>
+      <h1 class="hero-title" data-i18n-html="hero_h1">The calm, knowledgeable friend for <em>everyday parenting</em>.</h1>
+      <p class="hero-sub" data-i18n="hero_sub">Parentee learns about your family and gives you warm, personalised guidance for the little moments: meals, bedtime, milestones and everything in between. Judgment-free, and always there.</p>
+      <div class="hero-actions">
+        <a href="#download" class="btn btn-primary"><span data-i18n="hero_dl">Download for iOS</span>
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#how" class="btn btn-ghost" data-i18n="hero_how">See How It Works</a>
+      </div>
+      <div class="hero-note">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="hero_note">Free to start · no card required</span>
+      </div>
+    </div>
+
+    <div class="phone-stage reveal in">
+      <div class="blob"></div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="ph-top">
+            <div class="ph-eyebrow">Tuesday morning</div>
+            <div class="ph-greet">Morning, <span>Sam</span> 👋</div>
+          </div>
+          <div class="ph-body">
+            <div class="bubble user">What should I make for dinner that Mia will actually eat?</div>
+            <div class="bubble ai"><span class="ph-orb"></span>Since <b>Mia</b> isn't keen on anything green yet, try hidden-veg pasta: tomato sauce blended with carrot &amp; courgette. Want me to add it to your grocery list?</div>
+            <div class="ph-chips">
+              <span class="chip">Add to groceries</span>
+              <span class="chip">Bedtime stalling</span>
+              <span class="chip">Weekend ideas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="trust">
+  <div class="wrap trust-in">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      <span data-i18n="trust_1">Private &amp; secure by design</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/></svg>
+      <span data-i18n="trust_2">Answers in seconds, any time</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      <span data-i18n="trust_3">Gentle, never preachy</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.6-3 3-4.5 5.5-4.5S14 16 14.5 19M15 14.5c2 .2 3.8 1.6 4.3 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span data-i18n="trust_4">Remembers every child</span>
+    </div>
+  </div>
+</div>
+
+<section id="features">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="feat_eyebrow">What Parentee does</span>
+      <h2 data-i18n="feat_h2">One companion for the hundred small questions a day.</h2>
+      <p data-i18n="feat_p">Set up a quick profile for each child, and Parentee tailors everything to their age, stage and little quirks.</p>
+    </div>
+    <div class="feat-showcase">
+      <!-- Live 3D canvas — always playing, switches on hover -->
+      <div class="feat-stage reveal">
+        <canvas id="feat-cvs" aria-hidden="true"></canvas>
+        <div class="feat-info">
+          <div class="feat-info-label" id="feat-label"></div>
+          <div class="feat-info-sub" id="feat-sub"></div>
+        </div>
+        <div class="feat-dots" id="feat-dots"></div>
+      </div>
+      <!-- Feature card list -->
+      <div class="feat-cards reveal">
+        <div class="card on"><h3 data-i18n="feat_1">Ask anything</h3></div>
+        <div class="card"><h3 data-i18n="feat_2">Morning briefing</h3></div>
+        <div class="card"><h3 data-i18n="feat_3">It remembers</h3></div>
+        <div class="card"><h3 data-i18n="feat_4">Meals &amp; grocery lists</h3></div>
+        <div class="card"><h3 data-i18n="feat_5">School &amp; teacher emails</h3></div>
+        <div class="card"><h3 data-i18n="feat_6">Behaviour coaching</h3></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="padding-top:20px">
+  <div class="wrap">
+    <div class="how reveal">
+      <span class="eyebrow" data-i18n="how_eyebrow">How it works</span>
+      <h2 data-i18n="how_h2">Set up once. Helpful from day one.</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">1</div>
+          <h4 data-i18n="step1_h4">Introduce your family</h4>
+          <p data-i18n="step1_p">A two-minute profile for each child: name, age, the things that make them them.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">2</div>
+          <h4 data-i18n="step2_h4">Ask whatever's on your mind</h4>
+          <p data-i18n="step2_p">Type it like you'd text a friend. No perfect wording needed.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">3</div>
+          <h4 data-i18n="step3_h4">Get guidance you can use</h4>
+          <p data-i18n="step3_p">Warm, personalised, and ready to act on. Today, not someday.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="neighbourhood">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Your Parentee Neighbourhood</span>
+      <h2>Find the plan that fits your family.</h2>
+      <p>Every Parentee home is different. Pick the one that suits where you are right now.</p>
+    </div>
+    <div class="reveal">
+      <canvas id="city-canvas"></canvas>
+      <div class="city-legend">
+        <a href="#pricing"><span class="city-dot"></span>Free: Getting started</a>
+        <a href="#pricing" class="top"><span class="city-dot top"></span>Family: Most popular</a>
+        <a href="#pricing"><span class="city-dot"></span>Family+: For larger households</a>
+      </div>
+      <p class="pp-hint">Click a house to explore its plan</p>
+
+      <div id="plan-panel">
+        <div class="plan-popup" id="plan-popup">
+          <div class="pp-meta">
+            <div class="pp-name" id="pp-name"></div>
+            <div class="pp-price" id="pp-price"></div>
+            <div class="pp-billing" id="pp-billing"></div>
+          </div>
+          <ul class="pp-features" id="pp-features"></ul>
+          <div style="align-self:center;flex-shrink:0">
+            <a href="#pricing" class="btn btn-primary">See full pricing
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="pricing_eyebrow">Pricing</span>
+      <h2 data-i18n="pricing_h2">Start free. Upgrade when it earns its place.</h2>
+      <p data-i18n="pricing_p">No card to begin. Cancel anytime. Prices shown in USD.</p>
+    </div>
+
+    <div class="bill-toggle reveal" role="group" aria-label="Billing period">
+      <button id="b-annual" class="on" onclick="setBill('annual')">Annual <span class="save-tag">save 26%</span></button>
+      <button id="b-monthly" onclick="setBill('monthly')">Monthly</button>
+    </div>
+
+    <div class="plans">
+      <div class="plan reveal">
+        <div class="plan-name">Free</div>
+        <div class="plan-tag">For trying things out.</div>
+        <div class="price">$0</div>
+        <div class="price-sub">Forever free</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>1 child profile</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>10 AI questions / month</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>3 meal plans / month</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Basic packing lists</li>
+        </ul>
+        <a href="#download" class="btn btn-ghost">Get Started</a>
+      </div>
+
+      <div class="plan featured reveal">
+        <div class="badge">Most popular</div>
+        <div class="plan-name">Family</div>
+        <div class="plan-tag">Most parents pick this.</div>
+        <div class="price"><span data-annual="$89" data-monthly="$9.99">$89</span><small data-annual="/yr" data-monthly="/mo">/yr</small></div>
+        <div class="price-sub" data-annual="Just $7.42 / month · save 26%" data-monthly="Billed monthly">Just $7.42 / month · save 26%</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Up to 4 children · each remembered</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Unlimited Ask + meal plans</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Grocery list + calendar sync</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>School email drafts</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Behaviour coach</li>
+        </ul>
+        <a href="#download" class="btn btn-primary">Start Family</a>
+      </div>
+
+      <div class="plan reveal">
+        <div class="plan-name">Family+</div>
+        <div class="plan-tag">For households of many.</div>
+        <div class="price"><span data-annual="$159" data-monthly="$17.99">$159</span><small data-annual="/yr" data-monthly="/mo">/yr</small></div>
+        <div class="price-sub" data-annual="Just $13.25 / month · save 26%" data-monthly="Billed monthly">Just $13.25 / month · save 26%</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Family</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Up to 6 children + co-parent invite</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Gift &amp; birthday planner</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Activity finder (local)</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Priority support</li>
+        </ul>
+        <a href="#download" class="btn btn-ghost">Start Family+</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="faq_eyebrow">Common questions</span>
+      <h2 data-i18n="faq_h2">Everything parents want to know.</h2>
+      <p data-i18n="faq_p">Still wondering how Parentee fits into your family? These are the questions we hear most.</p>
+    </div>
+    <div class="faq-cols reveal">
+      <div>
+        <details class="faq-item">
+          <summary><span data-i18n="faq_q1">What is Parentee?</span><svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <p class="faq-ans" data-i18n-html="faq_a1">Parentee is an <strong>AI parenting companion</strong> that gives you personalised, judgment-free guidance for every stage of raising a child. Unlike a generic chatbot, Parentee remembers each child's age, allergies, routines and temperament so every answer is tailored to your family, not a one-size-fits-all forum post.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span data-i18n="faq_q2">How is Parentee different from Google or ChatGPT?</span><svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <p class="faq-ans" data-i18n-html="faq_a2">Search engines return hundreds of conflicting links; ChatGPT gives generic answers that know nothing about your child. Parentee knows your child's name, age, quirks and history. Ask "what should Mia eat this week?" and it factors in her picky-eating stage, any intolerances you've shared, and meals you've already tried. <strong>Personalised parenting advice</strong>, not population-average advice.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span data-i18n="faq_q3">What kinds of questions can I ask Parentee?</span><svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <p class="faq-ans" data-i18n-html="faq_a3">Almost anything about raising your children. Parents commonly ask about <strong>sleep schedules</strong>, picky eating, meal ideas, sibling conflicts, tantrums, screen time boundaries, school and homework struggles, writing teacher emails, developmental milestones and daily routines. If it's one of the hundred small questions a day that don't warrant a doctor's appointment, Parentee is here for it.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span data-i18n="faq_q4">What ages does Parentee support?</span><svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <p class="faq-ans" data-i18n-html="faq_a4">Parentee supports children from <strong>newborn through to 17 years old</strong>. Whether you're managing a newborn's feeding schedule, navigating toddler tantrums, or talking to a twelve-year-old about peer pressure, Parentee adapts its tone and guidance to match your child's developmental stage.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span data-i18n="faq_q5">Can Parentee help with tantrums, sleep or behaviour problems?</span><svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <p class="faq-ans" data-i18n-html="faq_a5">Yes. The <strong>Behaviour Coaching</strong> feature offers gentle, evidence-informed strategies for tantrums, meltdowns, back-talk, sleep resistance, sibling fights and screen time battles. Advice is tailored to your child's temperament and age, not generic tips that may not fit your situation.</p>
+        </details>
+      </div>
+      <div>
+        <details class="faq-item">
+          <summary><span data-i18n="faq_q6">Can I use Parentee for more than one child?</span><svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <p class="faq-ans" data-i18n-html="faq_a6">Yes. The <strong>Family plan supports up to 4 children</strong>, each with their own remembered profile. The Family+ plan extends this to 6 children and adds a co-parent invite so both parents share the same family account. A question about your 8-year-old never gets confused with advice for your toddler.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span data-i18n="faq_q7">Does Parentee replace my doctor or paediatrician?</span><svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <p class="faq-ans" data-i18n-html="faq_a7">No. Parentee is a parenting companion, not a medical professional. For medical, mental-health or developmental concerns, always consult a qualified healthcare provider. Parentee is here for everyday questions, routines and decisions, not clinical diagnosis or treatment.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span data-i18n="faq_q8">How does Parentee protect my family's data and privacy?</span><svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <p class="faq-ans" data-i18n-html="faq_a8">Your family's data is <strong>encrypted in transit and at rest</strong>. Parentee does not sell your data or use your children's information to train AI models. You can delete your account and all associated data at any time. We are committed to GDPR and COPPA compliance, and never store sensitive information without your explicit consent.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span data-i18n="faq_q9">How much does Parentee cost? Is there a free plan?</span><svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <p class="faq-ans" data-i18n-html="faq_a9">Parentee has a free <strong>Starter plan</strong> for one child. The <strong>Family plan</strong> is $7.42 per month (billed $89 annually) and covers up to 4 children with unlimited questions, meal plans, grocery lists and school email drafts. <strong>Family+</strong> at $13.25 per month adds 6 children, a co-parent invite and a birthday planner. All paid plans start with a free trial.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span data-i18n="faq_q10">Is Parentee available on iPhone and Android?</span><svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <p class="faq-ans" data-i18n-html="faq_a10">Parentee is <strong>available for iPhone</strong> on the App Store now. An Android version is in development and coming later this year. Join the early-access waitlist from the download page to be notified as soon as the Android app launches.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="download" class="final">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="dl_eyebrow">Ready when you are</span>
+      <h2 class="serif" data-i18n="dl_h2">Parenting, with a little help.</h2>
+      <p data-i18n="dl_p">Download Parentee and feel a little more confident, every day.</p>
+      <div class="hero-actions" style="justify-content:center">
+        <a href="#" class="btn btn-primary"><span data-i18n="dl_btn">Download on the App Store</span>
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="logo-mark">
+            <img src="high-resolution-color-logo-3.png" alt="Parentee logo" width="38" height="38">
+          </span>
+          Parentee
+        </div>
+        <p data-i18n="footer_tag">The calm, knowledgeable companion for everyday parenting.</p>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot_col_product">Product</h5>
+        <a href="#features" data-i18n="nav_features">Features</a>
+        <a href="#how" data-i18n="nav_how">How it works</a>
+        <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="#download" data-i18n="foot_download">Download</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot_col_legal">Legal</h5>
+        <a href="https://vincli.com/docs/Parentee-Privacy-Policy.pdf" data-i18n="foot_privacy">Privacy Policy</a>
+        <a href="https://vincli.com/docs/Parentee-Terms-of-Use-EULA.pdf" data-i18n="foot_terms">Terms of Use</a>
+        <a href="https://vincli.com/docs/Parentee-Subscription-Terms-Disclosure.pdf" data-i18n="foot_sub_terms">Subscription Terms</a>
+        <a href="https://vincli.com/docs/Parentee-In-App-Disclaimers.pdf" data-i18n="foot_disclaimers">Disclaimers</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot_col_company">Company</h5>
+        <a href="mailto:hello@vincli.com" data-i18n="foot_contact">Contact</a>
+        <a href="#" data-i18n="foot_support">Support</a>
+      </div>
+    </div>
+    <div class="foot-disc" data-i18n="foot_disc">
+      Parentee provides general information and support to help you care for your child. It is not a medical, diagnostic, or emergency service and does not replace advice from a qualified professional. For medical concerns or emergencies, always contact a healthcare provider or emergency services.
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Vincli Ltd. Company No. 16677554 · 128 City Road, London, EC1V 2NX.</span>
+      <span data-i18n="foot_made_with">Made with care for families.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Three.js r160 -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script>
+// ===== THREE.JS FLOATING ORB FIELD =====
+(function () {
+  if (!window.THREE) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var isMobile = /Mobi|Android/i.test(navigator.userAgent);
+  var W = window.innerWidth, H = window.innerHeight;
+
+  var canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:fixed;inset:0;z-index:-2;pointer-events:none';
+  document.body.insertBefore(canvas, document.body.firstChild);
+
+  var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: !isMobile });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
+  renderer.setSize(W, H);
+
+  var scene = new THREE.Scene();
+  var cam = new THREE.PerspectiveCamera(60, W / H, 0.1, 200);
+  cam.position.z = 35;
+
+  // Warm trifecta of lights matching brand palette
+  scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+  var lights = [
+    [0x9FE1CB, 3.5, 90, 18, 14, 20],
+    [0xE4CFA6, 2.5, 75, -20, -8, 16],
+    [0xC4BAE5, 2.0, 60,  4, 20, 10],
+  ];
+  lights.forEach(function (p) {
+    var l = new THREE.PointLight(p[0], p[1], p[2]);
+    l.position.set(p[3], p[4], p[5]);
+    scene.add(l);
+  });
+
+  // Brand palette — soft 50/100 variants for orbs, accents for smaller ones
+  var palette = [
+    0x9FE1CB, 0xE1F5EE, // teal
+    0xE4CFA6, 0xF5EFE4, // sand
+    0xC4BAE5, 0xECE9F6, // iris
+    0x1D9E75,           // teal accent (very low opacity)
+    0xB4823C,           // sand accent (very low opacity)
+  ];
+
+  var sphereCount = isMobile ? 10 : 26;
+  var spheres = [];
+
+  for (var i = 0; i < sphereCount; i++) {
+    var isAccent = i % 8 === 6 || i % 8 === 7;
+    var r = isAccent
+      ? Math.random() * 1.0 + 0.3
+      : Math.random() * 2.8 + 0.5;
+
+    var geo = new THREE.SphereGeometry(r, isMobile ? 12 : 28, isMobile ? 12 : 28);
+    var mat = new THREE.MeshPhongMaterial({
+      color: palette[i % palette.length],
+      transparent: true,
+      opacity: isAccent ? 0.09 : Math.random() * 0.28 + 0.10,
+      shininess: 200,
+      specular: new THREE.Color(1, 1, 1),
+    });
+
+    var m = new THREE.Mesh(geo, mat);
+    var bx = (Math.random() - 0.5) * 54;
+    var by = (Math.random() - 0.5) * 40;
+    m.position.set(bx, by, (Math.random() - 0.5) * 24 - 6);
+    m.userData = {
+      bx: bx, by: by,
+      vy: Math.random() * 0.0025 + 0.0008,    // slow upward drift
+      px: Math.random() * Math.PI * 2,
+      py: Math.random() * Math.PI * 2,
+      sw: Math.random() * 1.9 + 0.6,           // sway amplitude
+      rs: (Math.random() - 0.5) * 0.0045,      // rotation speed
+      bs: Math.random() * 0.007 + 0.003,       // breath speed
+      bp: Math.random() * Math.PI * 2,         // breath phase
+    };
+    scene.add(m);
+    spheres.push(m);
+  }
+
+  // Sparkle particle clouds — teal + sand
+  if (!isMobile) {
+    var addCloud = function (n, color, size, opacity) {
+      var pos = new Float32Array(n * 3);
+      for (var j = 0; j < n; j++) {
+        pos[j * 3]     = (Math.random() - 0.5) * 62;
+        pos[j * 3 + 1] = (Math.random() - 0.5) * 48;
+        pos[j * 3 + 2] = (Math.random() - 0.5) * 32 - 10;
+      }
+      var g = new THREE.BufferGeometry();
+      g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+      scene.add(new THREE.Points(g,
+        new THREE.PointsMaterial({ color: color, size: size, transparent: true, opacity: opacity })
+      ));
+    };
+    addCloud(200, 0x9FE1CB, 0.07, 0.50);
+    addCloud(100, 0xE4CFA6, 0.11, 0.38);
+    addCloud(60,  0xC4BAE5, 0.09, 0.30);
+  }
+
+  // Soft cursor-following orb
+  var cursorOrb = new THREE.Mesh(
+    new THREE.SphereGeometry(1.5, 18, 18),
+    new THREE.MeshPhongMaterial({
+      color: 0x9FE1CB, transparent: true, opacity: 0.20,
+      shininess: 250, specular: new THREE.Color(1, 1, 1),
+    })
+  );
+  cursorOrb.position.z = 8;
+  scene.add(cursorOrb);
+
+  var mx = 0, my = 0, scrollY = 0, camX = 0, camY = 0, t = 0, raf;
+
+  document.addEventListener('mousemove', function (e) {
+    mx = (e.clientX / window.innerWidth  - 0.5) * 2;
+    my = -(e.clientY / window.innerHeight - 0.5) * 2;
+  });
+  window.addEventListener('scroll', function () { scrollY = window.scrollY; }, { passive: true });
+
+  function tick() {
+    raf = requestAnimationFrame(tick);
+    t += 0.007;
+
+    // Smooth camera parallax
+    camX += (mx * 3.5 - camX) * 0.034;
+    camY += (my * 1.8 - camY) * 0.034;
+    cam.position.x = camX;
+    cam.position.y = camY - scrollY * 0.003;
+    cam.lookAt(0, -scrollY * 0.003, 0);
+
+    // Animate each orb
+    for (var i = 0; i < spheres.length; i++) {
+      var s = spheres[i], d = s.userData;
+      // Sinusoidal sway from base position
+      s.position.x = d.bx + Math.sin(t + d.px) * d.sw;
+      s.position.y = d.by + Math.cos(t * 0.68 + d.py) * d.sw * 0.5;
+      // Slow upward drift (wrap around)
+      d.by += d.vy * 0.4;
+      if (d.by > 23) d.by = -23;
+      // Gentle breathing
+      s.scale.setScalar(1 + Math.sin(t * d.bs + d.bp) * 0.042);
+      // Lazy rotation
+      s.rotation.x += d.rs;
+      s.rotation.y += d.rs * 1.6;
+    }
+
+    // Project cursor to 3D plane at z=8
+    var fov = Math.PI / 3; // 60°
+    var depth = cam.position.z - 8;
+    var vh = 2 * Math.tan(fov / 2) * depth;
+    var vw = vh * (W / H);
+    cursorOrb.position.x += (mx * vw * 0.5 - cursorOrb.position.x) * 0.09;
+    cursorOrb.position.y += (my * vh * 0.5 - cursorOrb.position.y) * 0.09;
+
+    renderer.render(scene, cam);
+  }
+
+  tick();
+
+  document.addEventListener('visibilitychange', function () {
+    document.hidden ? cancelAnimationFrame(raf) : tick();
+  });
+
+  window.addEventListener('resize', function () {
+    W = window.innerWidth; H = window.innerHeight;
+    cam.aspect = W / H;
+    cam.updateProjectionMatrix();
+    renderer.setSize(W, H);
+  });
+})();
+
+// ===== 3D CARD TILT + PARALLAX DEPTH LAYERS =====
+(function () {
+  document.querySelectorAll('.card, .plan').forEach(function (el) {
+    var shine = document.createElement('div');
+    shine.className = 'tilt-shine';
+    el.appendChild(shine);
+  });
+
+  // withParallax: icon/title/desc shift at different rates → depth illusion
+  function makeTiltable(selector, maxDeg, withParallax) {
+    document.querySelectorAll(selector).forEach(function (card) {
+      var shine = card.querySelector('.tilt-shine');
+      var icon  = withParallax ? card.querySelector('.ic')  : null;
+      var h3    = withParallax ? card.querySelector('h3')   : null;
+      var desc  = withParallax ? card.querySelector('p')    : null;
+
+      card.addEventListener('mouseenter', function () {
+        card.style.transition = 'box-shadow 0.2s ease';
+      });
+
+      card.addEventListener('mousemove', function (e) {
+        var r  = card.getBoundingClientRect();
+        var x  = (e.clientX - r.left) / r.width;
+        var y  = (e.clientY - r.top)  / r.height;
+        var rx = -(y - 0.5) * maxDeg * 2;
+        var ry =  (x - 0.5) * maxDeg * 2;
+
+        card.style.transform =
+          'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateZ(12px)';
+        card.style.boxShadow = '0 24px 54px -14px rgba(26,26,24,.26)';
+        card.style.setProperty('--sx', (x * 100) + '%');
+        card.style.setProperty('--sy', (y * 100) + '%');
+        if (shine) shine.style.opacity = '1';
+
+        // Parallax depth — each layer moves at a different rate
+        if (icon) {
+          var dx = (x - 0.5) * 22, dy = (y - 0.5) * 22;
+          icon.style.transform = 'translate(' + (dx * 0.85) + 'px,' + (dy * 0.85) + 'px) scale(1.13)';
+          h3.style.transform   = 'translate(' + (dx * 0.40) + 'px,' + (dy * 0.40) + 'px)';
+          desc.style.transform = 'translate(' + (dx * 0.16) + 'px,' + (dy * 0.16) + 'px)';
+        }
+      });
+
+      card.addEventListener('mouseleave', function () {
+        card.style.transition =
+          'transform 0.55s cubic-bezier(0.23,1,0.32,1), box-shadow 0.4s ease';
+        card.style.transform = '';
+        card.style.boxShadow = '';
+        if (shine) shine.style.opacity = '0';
+        if (icon) {
+          var t = 'transform 0.5s cubic-bezier(0.23,1,0.32,1)';
+          icon.style.transition = h3.style.transition = desc.style.transition = t;
+          icon.style.transform  = h3.style.transform  = desc.style.transform  = '';
+          setTimeout(function () {
+            icon.style.transition = h3.style.transition = desc.style.transition = '';
+          }, 520);
+        }
+        setTimeout(function () { card.style.transition = 'box-shadow 0.25s ease'; }, 560);
+      });
+    });
+  }
+
+  makeTiltable('.card', 10, true);   // features: full parallax depth
+  makeTiltable('.plan',  8, false);  // pricing: tilt only
+})();
+
+// ===== PHONE 3D PARALLAX =====
+(function () {
+  var hero  = document.querySelector('header.hero');
+  var phone = document.querySelector('.phone');
+  if (!hero || !phone) return;
+
+  hero.addEventListener('mousemove', function (e) {
+    var r = hero.getBoundingClientRect();
+    var x = (e.clientX - r.left) / r.width  - 0.5;
+    var y = (e.clientY - r.top)  / r.height - 0.5;
+    phone.style.transform =
+      'perspective(1000px) rotateY(' + (x * 18) + 'deg) rotateX(' + (-y * 11) + 'deg)';
+  });
+
+  hero.addEventListener('mouseleave', function () {
+    phone.style.transform = '';
+  });
+})();
+
+// ===== 3D LOGO — modly image-to-3d concept: logo image → extruded 3D mesh =====
+(function () {
+  if (!window.THREE || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var c = document.getElementById('logo3d');
+  if (!c) return;
+
+  var r = new THREE.WebGLRenderer({ canvas: c, alpha: true, antialias: true });
+  r.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  r.setSize(72, 72);
+
+  var scene = new THREE.Scene();
+  var cam = new THREE.PerspectiveCamera(46, 1, 0.1, 100);
+  cam.position.set(0, 0, 6);
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.35));
+  [[0xBBDD18, 4, 3, 3, 3], [0x228833, 2, -3, -1, 2], [0xffffff, 1, 0, 3, 1]].forEach(function (p) {
+    var l = new THREE.DirectionalLight(p[0], p[1]);
+    l.position.set(p[2], p[3], p[4]);
+    scene.add(l);
+  });
+
+  // Build one petal as a Shape, extrude it, clone & rotate 4x
+  function petalGeo() {
+    var s = new THREE.Shape();
+    s.moveTo(0, -0.06);
+    s.bezierCurveTo(-0.52, 0.22, -0.72, 1.08, 0, 1.56);
+    s.bezierCurveTo( 0.72, 1.08,  0.52, 0.22, 0, -0.06);
+    return new THREE.ExtrudeGeometry(s, {
+      depth: 0.28, bevelEnabled: true,
+      bevelSize: 0.05, bevelThickness: 0.04, bevelSegments: 2
+    });
+  }
+
+  var group = new THREE.Group();
+  var hues = [0x8EC41A, 0x2A8C3A, 0x74B010, 0x228030];
+  for (var i = 0; i < 4; i++) {
+    var geo = petalGeo();
+    geo.center();
+    var m = new THREE.Mesh(geo, new THREE.MeshPhongMaterial({
+      color: hues[i], shininess: 200, specular: new THREE.Color(1, 1, 1)
+    }));
+    m.rotation.z = i * (Math.PI / 2);
+    group.add(m);
+  }
+  group.scale.setScalar(0.88);
+  scene.add(group);
+
+  var t2 = 0, raf2;
+  function tick2() {
+    raf2 = requestAnimationFrame(tick2);
+    t2 += 0.013;
+    group.rotation.y = t2;
+    group.rotation.x = Math.sin(t2 * 0.38) * 0.16;
+    r.render(scene, cam);
+  }
+  tick2();
+  document.addEventListener('visibilitychange', function () {
+    document.hidden ? cancelAnimationFrame(raf2) : tick2();
+  });
+})();
+
+// ===== NEIGHBOURHOOD CITY — git-city-3d concept: plans → 3D buildings =====
+(function () {
+  if (!window.THREE || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var c = document.getElementById('city-canvas');
+  if (!c) return;
+
+  // Resolve canvas pixel size
+  var W = c.offsetWidth || (window.innerWidth - 48);
+  var H = 440;
+  c.width  = W;
+  c.height = H;
+
+  var r3 = new THREE.WebGLRenderer({ canvas: c, alpha: true, antialias: true });
+  r3.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  r3.setSize(W, H);
+  r3.shadowMap.enabled = true;
+  r3.shadowMap.type = THREE.PCFSoftShadowMap;
+
+  var scene3 = new THREE.Scene();
+  scene3.fog = new THREE.FogExp2(0xF0EBE0, 0.028);
+
+  var cam3 = new THREE.PerspectiveCamera(44, W / H, 0.1, 200);
+
+  // Lighting — warm late-afternoon sun
+  scene3.add(new THREE.AmbientLight(0xFFF3DC, 0.55));
+  var sun = new THREE.DirectionalLight(0xFFCF80, 2.0);
+  sun.position.set(-12, 18, 10);
+  sun.castShadow = true;
+  sun.shadow.mapSize.set(1024, 1024);
+  sun.shadow.camera.near = 1;
+  sun.shadow.camera.far = 60;
+  sun.shadow.camera.left = -20;
+  sun.shadow.camera.right = 20;
+  sun.shadow.camera.top = 15;
+  sun.shadow.camera.bottom = -15;
+  scene3.add(sun);
+
+  // Sky fill from opposite side
+  var sky = new THREE.DirectionalLight(0xC8DDF5, 0.6);
+  sky.position.set(10, 8, -5);
+  scene3.add(sky);
+
+  // Ground — soft grass
+  var ground3 = new THREE.Mesh(
+    new THREE.PlaneGeometry(50, 35),
+    new THREE.MeshLambertMaterial({ color: 0xC8D8A8 })
+  );
+  ground3.rotation.x = -Math.PI / 2;
+  ground3.receiveShadow = true;
+  scene3.add(ground3);
+
+  // Stone path
+  var pathM = new THREE.MeshLambertMaterial({ color: 0xC8BFB0 });
+  [[-3.5, 0, 0], [3.5, 0, 0]].forEach(function (p) {
+    var seg = new THREE.Mesh(new THREE.BoxGeometry(7, 0.05, 2.2), pathM);
+    seg.position.set(p[0], 0.01, 0);
+    scene3.add(seg);
+  });
+
+  // ---- House builder (git-city metric mapping: plan → building size) ----
+  function addHouse(cfg) {
+    var g = new THREE.Group();
+    var wallM = new THREE.MeshPhongMaterial({ color: cfg.wall, shininess: 50 });
+    var roofM = new THREE.MeshPhongMaterial({ color: cfg.roof, shininess: 30 });
+    var winM  = new THREE.MeshPhongMaterial({ color: 0xFFE566, emissive: 0xFFBB00, emissiveIntensity: 0.55 });
+    var doorM = new THREE.MeshPhongMaterial({ color: cfg.door, shininess: 80 });
+
+    // Main body
+    var body = new THREE.Mesh(new THREE.BoxGeometry(cfg.w, cfg.h, cfg.d), wallM);
+    body.position.y = cfg.h / 2;
+    body.castShadow = true; body.receiveShadow = true;
+    g.add(body);
+
+    // Wing (Family+ only)
+    if (cfg.wing) {
+      var wing = new THREE.Mesh(new THREE.BoxGeometry(cfg.wing.w, cfg.wing.h, cfg.wing.d), wallM);
+      wing.position.set(cfg.wing.x, cfg.wing.h / 2, 0);
+      wing.castShadow = true; wing.receiveShadow = true;
+      g.add(wing);
+      var wingRoof = new THREE.Mesh(new THREE.ConeGeometry(cfg.wing.w * 0.75, cfg.wing.rh, 4), roofM);
+      wingRoof.position.set(cfg.wing.x, cfg.wing.h + cfg.wing.rh / 2 - 0.08, 0);
+      wingRoof.rotation.y = Math.PI / 4;
+      wingRoof.castShadow = true;
+      g.add(wingRoof);
+    }
+
+    // Roof pyramid
+    var roof = new THREE.Mesh(new THREE.ConeGeometry(cfg.w * 0.76, cfg.rh, 4), roofM);
+    roof.position.y = cfg.h + cfg.rh / 2 - 0.1;
+    roof.rotation.y = Math.PI / 4;
+    roof.castShadow = true;
+    g.add(roof);
+
+    // Chimney
+    var chim = new THREE.Mesh(new THREE.BoxGeometry(0.28, 0.75, 0.28), roofM);
+    chim.position.set(cfg.w * 0.25, cfg.h + cfg.rh * 0.52, 0);
+    chim.castShadow = true;
+    g.add(chim);
+
+    // Windows (git-city: window count = plan tier)
+    for (var wi = 0; wi < cfg.wins; wi++) {
+      var col = wi % 2, row = Math.floor(wi / 2);
+      var wx = (col === 0 ? -1 : 1) * cfg.w * 0.28;
+      var wy = cfg.h * (0.38 + row * 0.35);
+      var win = new THREE.Mesh(new THREE.BoxGeometry(0.46, 0.46, 0.06), winM);
+      win.position.set(wx, wy, cfg.d / 2 + 0.01);
+      g.add(win);
+    }
+
+    // Door
+    var dr = new THREE.Mesh(new THREE.BoxGeometry(0.52, 0.84, 0.06), doorM);
+    dr.position.set(0, 0.42, cfg.d / 2 + 0.01);
+    g.add(dr);
+
+    // Doorstep
+    var step = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.08, 0.4), new THREE.MeshLambertMaterial({ color: 0xC0B8A8 }));
+    step.position.set(0, 0.04, cfg.d / 2 + 0.21);
+    g.add(step);
+
+    g.position.set(cfg.x, 0, cfg.z || 0);
+    scene3.add(g);
+
+    // Warm window glow light
+    var wl = new THREE.PointLight(0xFFCC44, cfg.glow || 0.5, 5.5);
+    wl.position.set(cfg.x, cfg.h * 0.55, (cfg.z || 0) + cfg.d / 2 + 1.2);
+    scene3.add(wl);
+
+    return g;
+  }
+
+  // Build 3 houses — plan tier → building size (git-city metric mapping)
+  var houseGroups = [
+    addHouse({ x: -8,  w: 2.5, h: 2.2, d: 2.0, rh: 1.35,
+      wall: 0xF5F0E8, roof: 0x9FE1CB, door: 0xB4823C, wins: 2, glow: 0.4 }),
+    addHouse({ x:  0,  w: 3.8, h: 3.0, d: 2.6, rh: 1.9,
+      wall: 0xFFFDF8, roof: 0x0F6E56, door: 0x7A5418, wins: 4, glow: 0.75 }),
+    addHouse({ x:  8.5, w: 4.2, h: 3.5, d: 2.6, rh: 2.1,
+      wall: 0xF0EDF8, roof: 0x04342C, door: 0x473688, wins: 6, glow: 0.55,
+      wing: { w: 1.9, h: 2.2, d: 2.0, rh: 1.2, x: 3.0 } }),
+  ];
+
+  // Trees (git-city: organic detail layer)
+  function addTree(x, z, h) {
+    var g = new THREE.Group();
+    var trunkM = new THREE.MeshLambertMaterial({ color: 0x8B6244 });
+    var leafM  = new THREE.MeshLambertMaterial({ color: 0x4A8C3A });
+    var tr = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.18, h * 0.45, 6), trunkM);
+    tr.position.y = h * 0.225;
+    tr.castShadow = true;
+    var lf = new THREE.Mesh(new THREE.ConeGeometry(h * 0.38, h * 0.75, 7), leafM);
+    lf.position.y = h * 0.72;
+    lf.castShadow = true;
+    g.add(tr); g.add(lf);
+    g.position.set(x, 0, z);
+    scene3.add(g);
+  }
+
+  addTree(-12, 2.5, 3.2); addTree(-11, -2, 2.8); addTree(-5.5, 3.5, 3.0);
+  addTree( -3,  3.5, 2.6); addTree( 4.5, 3.5, 3.4);
+  addTree( 12, 2.5, 3.0); addTree( 13, -1.5, 2.6); addTree( 6,  3.5, 2.8);
+
+  // Fence posts along front (Family house)
+  var fenceM = new THREE.MeshLambertMaterial({ color: 0xE8E0D0 });
+  for (var fi = -2; fi <= 2; fi++) {
+    if (fi === 0) continue; // gap for path
+    var fp = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.7, 0.12), fenceM);
+    fp.position.set(fi * 1.1, 0.35, 1.6);
+    scene3.add(fp);
+    var fr = new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.08, 0.08), fenceM);
+    fr.position.set(fi * 1.1 + 0.55, 0.55, 1.6);
+    scene3.add(fr);
+  }
+
+  // ---- Plan data (mirrors pricing section) ----
+  var CHECK = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var planData = [
+    { name: 'Free',    price: '$0',   small: '',    billing: 'Forever free',
+      feat: ['1 child profile', '10 AI questions / month', '3 meal plans / month', 'Basic packing lists'], featured: false },
+    { name: 'Family',  price: '$7.42',  small: '/mo', billing: 'Billed annually as $89/yr · save 26%',
+      feat: ['Up to 4 children · each remembered', 'Unlimited Ask + meal plans', 'Grocery list + calendar sync', 'School email drafts', 'Behaviour coach'], featured: true },
+    { name: 'Family+', price: '$13.25', small: '/mo', billing: 'Billed annually as $159/yr · save 26%',
+      feat: ['Everything in Family', 'Up to 6 children + co-parent invite', 'Gift & birthday planner', 'Activity finder (local)', 'Priority support'], featured: false },
+  ];
+
+  // ---- Collect all house meshes for raycasting ----
+  var rayMeshes = [];
+  houseGroups.forEach(function (hg, idx) {
+    hg.traverse(function (obj) {
+      if (obj.isMesh) { obj.userData.houseIdx = idx; rayMeshes.push(obj); }
+    });
+  });
+
+  var raycaster3 = new THREE.Raycaster();
+  var mouse3     = new THREE.Vector2();
+  var panel3     = document.getElementById('plan-panel');
+  var popup3     = document.getElementById('plan-popup');
+
+  function showPlan(idx) {
+    var p = planData[idx];
+    document.getElementById('pp-name').textContent = p.name;
+    document.getElementById('pp-price').innerHTML  =
+      p.price + (p.small ? '<small>' + p.small + '</small>' : '');
+    document.getElementById('pp-billing').textContent = p.billing;
+    var ul = document.getElementById('pp-features');
+    ul.innerHTML = '';
+    p.feat.forEach(function (f) {
+      var li = document.createElement('li');
+      li.innerHTML = CHECK + f;
+      ul.appendChild(li);
+    });
+    popup3.className = 'plan-popup' + (p.featured ? ' feat' : '');
+    panel3.classList.add('vis');
+    // Smooth scroll popup into view
+    panel3.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function pulseHouse(g) {
+    var start = Date.now();
+    (function step() {
+      var p = Math.min((Date.now() - start) / 500, 1);
+      g.scale.setScalar(1 + Math.sin(p * Math.PI) * 0.08);
+      if (p < 1) requestAnimationFrame(step);
+      else g.scale.setScalar(1);
+    })();
+  }
+
+  c.addEventListener('click', function (e) {
+    var rect = c.getBoundingClientRect();
+    mouse3.x =  ((e.clientX - rect.left) / rect.width)  * 2 - 1;
+    mouse3.y = -((e.clientY - rect.top)  / rect.height) * 2 + 1;
+    raycaster3.setFromCamera(mouse3, cam3);
+    var hits = raycaster3.intersectObjects(rayMeshes);
+    if (!hits.length) return;
+    var idx = hits[0].object.userData.houseIdx;
+    showPlan(idx);
+    pulseHouse(houseGroups[idx]);
+  });
+
+  // Hover cursor feedback
+  c.addEventListener('mousemove', function (e) {
+    var rect = c.getBoundingClientRect();
+    mouse3.x =  ((e.clientX - rect.left) / rect.width)  * 2 - 1;
+    mouse3.y = -((e.clientY - rect.top)  / rect.height) * 2 + 1;
+    raycaster3.setFromCamera(mouse3, cam3);
+    var hits = raycaster3.intersectObjects(rayMeshes);
+    c.style.cursor = hits.length ? 'pointer' : 'default';
+  });
+
+  // Camera orbit (git-city: city flyover camera)
+  var orbitR = 22, orbitH = 10, angle3 = 0.3;
+
+  var raf3;
+  function tick3() {
+    raf3 = requestAnimationFrame(tick3);
+    angle3 += 0.0025;
+    cam3.position.x = Math.sin(angle3) * orbitR;
+    cam3.position.z = Math.cos(angle3) * orbitR;
+    cam3.position.y = orbitH + Math.sin(angle3 * 0.4) * 1.5;
+    cam3.lookAt(0, 1.2, 0);
+    r3.render(scene3, cam3);
+  }
+  tick3();
+
+  document.addEventListener('visibilitychange', function () {
+    document.hidden ? cancelAnimationFrame(raf3) : tick3();
+  });
+
+  window.addEventListener('resize', function () {
+    W = c.offsetWidth || window.innerWidth - 48;
+    cam3.aspect = W / H;
+    cam3.updateProjectionMatrix();
+    r3.setSize(W, H);
+  });
+})();
+
+// ===== FEATURE CLICK — 3D MODAL ANIMATIONS =====
+// Skills applied:
+//  · 3d-visualizer  : InstancedMesh+Object3D dummy, Line network-graph edges
+//  · 3d-web-experience: 1 ambient + 1 dir light, mobile DPR, InstancedMesh perf
+//  · git-city       : camera.position.lerp, raycaster, instanced matrix pattern
+//  · web-design-guidelines: aria-modal, keyboard nav, prefers-reduced-motion
+(function () {
+  if (!window.THREE) return;
+  var prmq = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  var labelEl = document.getElementById('feat-label');
+  var subEl   = document.getElementById('feat-sub');
+  var cvs     = document.getElementById('feat-cvs');
+  if (!cvs) return;
+
+  // ---- renderer (created once, reused per git-city pattern) ----
+  var renderer = new THREE.WebGLRenderer({ canvas: cvs, alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // mobile DPR cap (3d-web-experience)
+  renderer.setClearColor(0x000000, 0); // transparent — page background shows through
+  renderer.setSize(cvs.offsetWidth || 580, cvs.offsetHeight || 380);
+
+  var scene  = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(58, (cvs.offsetWidth || 580) / (cvs.offsetHeight || 380), 0.1, 500);
+  camera.position.set(0, 0, 22);
+
+  var rafId = null;
+  // Shared Object3D dummy for InstancedMesh positioning — 3d-visualizer pattern
+  var dummy = new THREE.Object3D();
+
+  function rng(a, b) { return a + Math.random() * (b - a); }
+
+  function clearScene() {
+    cancelAnimationFrame(rafId);
+    while (scene.children.length) scene.remove(scene.children[0]);
+  }
+
+  // Light setup helper: 1 ambient + 1 directional (3d-web-experience guideline)
+  function lights(ambCol, ambI, dirCol, dirI, dx, dy, dz) {
+    scene.add(new THREE.AmbientLight(ambCol, ambI));
+    var dl = new THREE.DirectionalLight(dirCol, dirI);
+    dl.position.set(dx, dy, dz);
+    scene.add(dl);
+  }
+
+  // Quick mesh helper
+  function mesh(geo, mat) { var m = new THREE.Mesh(geo, mat); scene.add(m); return m; }
+
+  // Line between two Vector3 (3d-visualizer NetworkGraph pattern)
+  function line3(p1, p2, color, opacity) {
+    var l = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints([p1, p2]),
+      new THREE.LineBasicMaterial({ color: color, transparent: true, opacity: opacity || 0.5,
+        blending: THREE.AdditiveBlending, depthWrite: false })
+    );
+    scene.add(l); return l;
+  }
+
+  // ============================================================
+  // ANIMATION 0 — ASK ANYTHING
+  // Shows: user types a question → AI orb processes → answers appear
+  // The chat bubble exchange makes the "Q&A companion" role obvious.
+  // ============================================================
+  function animAsk() {
+    camera.position.set(0, 0, 22);
+    lights(0xffffff, 0.45, 0x9FE1CB, 3, 4, 8, 10);
+
+    // AI brain orb — the mind behind the answers
+    var orbMat = new THREE.MeshPhongMaterial({
+      color: 0x1D9E75, emissive: new THREE.Color(0x0F6E56),
+      emissiveIntensity: 0.7, shininess: 300
+    });
+    var orb = mesh(new THREE.SphereGeometry(1.6, 32, 32), orbMat);
+
+    // Rotating wireframe shell = AI "thinking"
+    var shell = mesh(
+      new THREE.IcosahedronGeometry(2.4, 1),
+      new THREE.MeshBasicMaterial({ color: 0x9FE1CB, wireframe: true, transparent: true, opacity: 0.22 })
+    );
+
+    // User question bubbles — left side (teal background = Parentee's brand)
+    var QUESTIONS = ['Why won\'t she eat?', 'Bedtime battle help?', 'Toddler meltdown tips?'];
+    var uBubbles = QUESTIONS.map(function(q, i) {
+      var mat = new THREE.MeshPhongMaterial({ color: 0xF1EFE8, shininess: 50, transparent: true, opacity: 0 });
+      var b = mesh(new THREE.BoxGeometry(4.2, 0.95, 0.14), mat);
+      b.position.set(-8, 2.6 - i * 1.5, 0); // start off-screen left
+      // Two text line stubs on the bubble
+      [0.18, -0.18].forEach(function(dy) {
+        var tl = new THREE.Mesh(
+          new THREE.BoxGeometry(i === 0 ? 3.0 : 2.4, 0.1, 0.18),
+          new THREE.MeshBasicMaterial({ color: 0x5F5E5A, transparent: true, opacity: 0.55 })
+        );
+        tl.position.set(0, dy, 0.1); b.add(tl);
+      });
+      return { b: b, mat: mat, delay: i * 0.85, shown: false };
+    });
+
+    // AI answer bubbles — right side (teal = from Parentee)
+    var ANSWERS = ['Try this routine first:', 'Start with these 3 steps:', 'Here\'s what works:'];
+    var aBubbles = ANSWERS.map(function(a, i) {
+      var mat = new THREE.MeshPhongMaterial({ color: 0x1D9E75, shininess: 60, transparent: true, opacity: 0 });
+      var b = mesh(new THREE.BoxGeometry(4.2, 1.2, 0.14), mat);
+      b.position.set(8, 2.0 - i * 1.6, 0); // start off-screen right
+      [-0.28, 0, 0.28].forEach(function(dy, li) {
+        var tl = new THREE.Mesh(
+          new THREE.BoxGeometry(li === 2 ? 2.0 : 3.2, 0.09, 0.18),
+          new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.7 })
+        );
+        tl.position.set(0, dy, 0.1); b.add(tl);
+      });
+      return { b: b, mat: mat, delay: i * 0.85 + 1.5, shown: false };
+    });
+
+    // Particles stream left→orb→right (showing data flowing)
+    var PN = 70;
+    var pPos = new Float32Array(PN * 3);
+    var pGeo = new THREE.BufferGeometry();
+    pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+    var pPts = new THREE.Points(pGeo, new THREE.PointsMaterial({
+      size: 0.2, color: 0x9FE1CB,
+      blending: THREE.AdditiveBlending, depthWrite: false, transparent: true
+    }));
+    scene.add(pPts);
+    var pD = [];
+    for (var i = 0; i < PN; i++) pD.push({ t: Math.random(), s: i % 2, ph: rng(0, Math.PI * 2) });
+
+    var t = 0;
+    function tick() {
+      rafId = requestAnimationFrame(tick);
+      t += 0.016;
+
+      orb.rotation.y += 0.013; shell.rotation.x += 0.005; shell.rotation.y -= 0.008;
+      orb.scale.setScalar(1 + Math.sin(t * 3.2) * 0.055);
+
+      uBubbles.forEach(function(item) {
+        if (!item.shown && t > item.delay + 0.3) item.shown = true;
+        if (item.shown) {
+          item.mat.opacity += (0.92 - item.mat.opacity) * 0.12;
+          item.b.position.x += (-5.4 - item.b.position.x) * 0.13;
+        }
+      });
+      aBubbles.forEach(function(item) {
+        if (!item.shown && t > item.delay + 0.3) item.shown = true;
+        if (item.shown) {
+          item.mat.opacity += (0.92 - item.mat.opacity) * 0.12;
+          item.b.position.x += (5.4 - item.b.position.x) * 0.13;
+        }
+      });
+
+      for (var i = 0; i < PN; i++) {
+        var d = pD[i]; d.t = (d.t + 0.02) % 1;
+        var f = d.t;
+        if (d.s === 0) { // user → orb
+          pPos[i*3]   = -5 + f * 5;
+          pPos[i*3+1] = 1.5 - f * 1.5 + Math.sin(f * 9 + d.ph) * 0.45;
+          pPos[i*3+2] = Math.cos(d.ph) * 0.6;
+        } else { // orb → answer
+          pPos[i*3]   = f * 5;
+          pPos[i*3+1] = 0.5 + Math.sin(f * 9 + d.ph) * 0.45;
+          pPos[i*3+2] = Math.sin(d.ph) * 0.6;
+        }
+      }
+      pGeo.attributes.position.needsUpdate = true;
+      camera.lookAt(0, 0, 0);
+      renderer.render(scene, camera);
+    }
+    tick();
+  }
+
+  // ============================================================
+  // ANIMATION 1 — MORNING BRIEFING
+  // Shows: sun rises, daily schedule cards pop up one-by-one.
+  // Instantly conveys "start-of-day summary" role.
+  // InstancedMesh for stars — 3d-visualizer + git-city pattern.
+  // ============================================================
+  function animMorning() {
+    camera.position.set(0, 2, 22);
+    lights(0xFFDDCC, 0.35, 0xFFAA44, 3.5, 0, 6, 10);
+
+    // Stars — InstancedMesh (single draw call, 3d-visualizer perf pattern)
+    var STAR_N = 38;
+    var starInst = new THREE.InstancedMesh(
+      new THREE.SphereGeometry(0.07, 4, 4),
+      new THREE.MeshBasicMaterial({ color: 0xFFFBEE, transparent: true }),
+      STAR_N
+    );
+    for (var i = 0; i < STAR_N; i++) {
+      dummy.position.set(rng(-13, 13), rng(1, 8), rng(-6, -1));
+      dummy.rotation.set(0, 0, 0); dummy.scale.setScalar(1);
+      dummy.updateMatrix();
+      starInst.setMatrixAt(i, dummy.matrix);
+    }
+    starInst.instanceMatrix.needsUpdate = true;
+    scene.add(starInst);
+
+    // Horizon glow
+    var horiz = mesh(new THREE.BoxGeometry(28, 0.1, 0.5),
+      new THREE.MeshBasicMaterial({ color: 0xFF8844, transparent: true, opacity: 0.4,
+        blending: THREE.AdditiveBlending, depthWrite: false }));
+    horiz.position.set(0, -3.8, -1);
+
+    // Sun — starts below horizon, rises
+    var sunMat = new THREE.MeshPhongMaterial({
+      color: 0xFFCC22, emissive: new THREE.Color(0xFF8800), emissiveIntensity: 0.9, shininess: 400 });
+    var sun = mesh(new THREE.SphereGeometry(2.1, 32, 32), sunMat);
+    sun.position.set(0, -7.5, -2);
+
+    // Sun rays — InstancedMesh (git-city window instancing pattern applied to rays)
+    var RAY_N = 14;
+    var rayAngles = [];
+    var rayInst = new THREE.InstancedMesh(
+      new THREE.BoxGeometry(0.07, 3.5, 0.07),
+      new THREE.MeshBasicMaterial({ color: 0xFFEE88, transparent: true, opacity: 0.38,
+        blending: THREE.AdditiveBlending, depthWrite: false }),
+      RAY_N
+    );
+    for (var i = 0; i < RAY_N; i++) {
+      var a = (i / RAY_N) * Math.PI * 2; rayAngles.push(a);
+      dummy.position.set(Math.cos(a) * 3.6, -7.5 + Math.sin(a) * 3.6, -2.1);
+      dummy.rotation.set(0, 0, a); dummy.scale.setScalar(1);
+      dummy.updateMatrix(); rayInst.setMatrixAt(i, dummy.matrix);
+    }
+    rayInst.instanceMatrix.needsUpdate = true; scene.add(rayInst);
+
+    // Schedule cards — 3 agenda items that pop up as the sun rises
+    var ITEMS = [
+      { label: 'School run 8:15', color: 0x1D9E75, x: -5.5, delay: 1.1 },
+      { label: 'Dr. Chen 10am',   color: 0xB4823C, x:  0,   delay: 1.65 },
+      { label: 'Pickup 3:45pm',   color: 0x6A56C9, x:  5.5, delay: 2.2 },
+    ];
+    var cards = ITEMS.map(function(item) {
+      var mat = new THREE.MeshPhongMaterial({ color: 0xFFFAF0, shininess: 50, transparent: true, opacity: 0 });
+      var card = mesh(new THREE.BoxGeometry(3.8, 2.0, 0.16), mat);
+      card.position.set(item.x, -2.5, 0);
+      card.rotation.x = 0.5;
+      // Coloured accent top
+      var acc = new THREE.Mesh(new THREE.BoxGeometry(3.8, 0.25, 0.2),
+        new THREE.MeshBasicMaterial({ color: item.color }));
+      acc.position.set(0, 0.88, 0.02); card.add(acc);
+      // Time chip
+      var chip = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.38, 0.2),
+        new THREE.MeshBasicMaterial({ color: item.color, transparent: true, opacity: 0.18 }));
+      chip.position.set(-0.4, 0.25, 0.1); card.add(chip);
+      // Text stubs
+      [-0.15, -0.52].forEach(function(dy) {
+        var tl = new THREE.Mesh(new THREE.BoxGeometry(2.8, 0.1, 0.2),
+          new THREE.MeshBasicMaterial({ color: 0x30302E, transparent: true, opacity: 0.45 }));
+        tl.position.set(0, dy, 0.1); card.add(tl);
+      });
+      return { card: card, mat: mat, delay: item.delay, shown: false };
+    });
+
+    var t = 0;
+    function tick() {
+      rafId = requestAnimationFrame(tick);
+      t += 0.016;
+
+      // Sun rises smoothly
+      sun.position.y += (-0.8 - sun.position.y) * 0.018;
+      sun.rotation.y += 0.005;
+      sun.scale.setScalar(1 + Math.sin(t * 2) * 0.022);
+
+      // Rays follow sun (update InstancedMesh — git-city matrix update pattern)
+      for (var i = 0; i < RAY_N; i++) {
+        var a = rayAngles[i] + t * 0.012;
+        dummy.position.set(sun.position.x + Math.cos(a) * 3.6,
+                           sun.position.y + Math.sin(a) * 3.6, -2.1);
+        dummy.rotation.set(0, 0, a);
+        dummy.scale.setScalar(1 + Math.sin(t * 2.5 + i * 0.45) * 0.18);
+        dummy.updateMatrix(); rayInst.setMatrixAt(i, dummy.matrix);
+      }
+      rayInst.instanceMatrix.needsUpdate = true;
+
+      // Stars fade as sun rises
+      starInst.material.opacity = Math.max(0, 1.0 - t * 0.28);
+
+      // Cards fly up and fade in with 3D flip (3d-web-experience card reveal pattern)
+      cards.forEach(function(c) {
+        if (!c.shown && t > c.delay) c.shown = true;
+        if (c.shown) {
+          c.mat.opacity += (0.95 - c.mat.opacity) * 0.09;
+          c.card.position.y += (2.2 - c.card.position.y) * 0.1;
+          c.card.rotation.x += (0 - c.card.rotation.x) * 0.12;
+        }
+      });
+
+      camera.lookAt(0, 0, 0);
+      renderer.render(scene, camera);
+    }
+    tick();
+  }
+
+  // ============================================================
+  // ANIMATION 2 — IT REMEMBERS
+  // Shows: 3D network graph — child profile at center, memory
+  // clusters orbit as nodes with glowing edges. New memory flies in.
+  // Applied: 3d-visualizer NetworkGraph node+Line pattern exactly.
+  // ============================================================
+  function animRemember() {
+    camera.position.set(0, 0, 22);
+    lights(0xffffff, 0.28, 0xC4BAE5, 3.5, 5, 10, 8);
+
+    // Central child profile node
+    var childMat = new THREE.MeshPhongMaterial({
+      color: 0x6A56C9, emissive: new THREE.Color(0x473688), emissiveIntensity: 0.75, shininess: 400 });
+    var childNode = mesh(new THREE.SphereGeometry(1.7, 32, 32), childMat);
+    // Profile ring
+    mesh(new THREE.TorusGeometry(2.5, 0.05, 8, 64),
+      new THREE.MeshBasicMaterial({ color: 0x6A56C9, transparent: true, opacity: 0.22,
+        blending: THREE.AdditiveBlending, depthWrite: false }));
+
+    // Memory categories — the things Parentee remembers for you
+    var MEMS = [
+      { label: 'No nuts allergy', col: 0xE53935, r: 6.8, a: 0.0,  y:  0.8 },
+      { label: 'Loves pasta',     col: 0xFFB300, r: 7.2, a: 1.1,  y: -0.9 },
+      { label: 'Age 5',           col: 0x1D9E75, r: 6.3, a: 2.0,  y:  1.3 },
+      { label: 'Shy mornings',    col: 0x6A56C9, r: 7.6, a: 2.9,  y: -0.2 },
+      { label: 'Soccer Tuesdays', col: 0x1E88E5, r: 6.6, a: 3.8,  y:  0.7 },
+      { label: 'Bedtime 8pm',     col: 0x43A047, r: 7.0, a: 4.6,  y: -1.1 },
+      { label: '1st steps ✓',    col: 0xFFB300, r: 6.4, a: 5.4,  y:  0.3 },
+    ];
+
+    var memNodes = [];
+    var edgeLines = [];
+
+    MEMS.forEach(function(m) {
+      var nMat = new THREE.MeshPhongMaterial({
+        color: m.col, emissive: new THREE.Color(m.col),
+        emissiveIntensity: 0.35, shininess: 180, transparent: true, opacity: 0.88 });
+      var n = mesh(new THREE.SphereGeometry(0.52, 16, 16), nMat);
+      n.position.set(Math.cos(m.a) * m.r, m.y, Math.sin(m.a) * m.r * 0.38);
+      n.userData = { a0: m.a, r: m.r, y: m.y, ph: rng(0, Math.PI * 2) };
+      memNodes.push(n);
+      // Edge line (3d-visualizer NetworkGraph Line pattern)
+      var el = line3(n.position.clone(), new THREE.Vector3(0, 0, 0), m.col, 0.35);
+      el.material.color = new THREE.Color(m.col);
+      edgeLines.push(el);
+      // Tiny satellite node
+      var sat = new THREE.Mesh(new THREE.SphereGeometry(0.16, 8, 8),
+        new THREE.MeshBasicMaterial({ color: m.col, transparent: true, opacity: 0.6 }));
+      sat.position.set(0.75, 0.38, 0.12); n.add(sat);
+    });
+
+    // "New memory arriving" — flies in from outside (shows live learning)
+    var newMemMat = new THREE.MeshPhongMaterial({
+      color: 0xFFFFFF, emissive: new THREE.Color(0x9FE1CB), emissiveIntensity: 1.1, shininess: 500 });
+    var newMem = mesh(new THREE.SphereGeometry(0.42, 16, 16), newMemMat);
+    newMem.position.set(14, 5, 0);
+    var newMemDest = new THREE.Vector3(Math.cos(0.55) * 6.5, 0.5, Math.sin(0.55) * 6.5 * 0.38);
+
+    var t = 0;
+    function tick() {
+      rafId = requestAnimationFrame(tick);
+      t += 0.016; var ROT = t * 0.38;
+
+      childNode.rotation.y += 0.009;
+      childNode.scale.setScalar(1 + Math.sin(t * 2.8) * 0.042);
+
+      memNodes.forEach(function(n, i) {
+        var d = n.userData;
+        var a = d.a0 + ROT;
+        n.position.set(Math.cos(a) * d.r, d.y + Math.sin(t * 1.1 + d.ph) * 0.28, Math.sin(a) * d.r * 0.38);
+        n.rotation.y += 0.022;
+        n.material.emissiveIntensity = 0.28 + Math.sin(t * 2.2 + d.ph) * 0.22;
+        // Update edge endpoints (network graph live update)
+        var pos = edgeLines[i].geometry.attributes.position;
+        pos.setXYZ(0, n.position.x, n.position.y, n.position.z);
+        pos.setXYZ(1, 0, 0, 0); pos.needsUpdate = true;
+        edgeLines[i].material.opacity = 0.18 + Math.sin(t * 1.8 + i * 0.65) * 0.28;
+      });
+
+      // New memory flies in and settles (eased cubic)
+      var tf = Math.min(t / 2.8, 1);
+      var ease = 1 - Math.pow(1 - tf, 3);
+      newMem.position.set(14 + (newMemDest.x - 14) * ease, 5 + (newMemDest.y - 5) * ease, newMemDest.z * ease);
+      newMem.scale.setScalar(0.25 + ease * 0.75);
+      newMem.material.emissiveIntensity = 0.7 + Math.sin(t * 8) * 0.5;
+      if (tf >= 1) newMem.position.lerp(newMemDest, 0.05);
+
+      camera.lookAt(0, 0, 0);
+      renderer.render(scene, camera);
+    }
+    tick();
+  }
+
+  // ============================================================
+  // ANIMATION 3 — MEALS & GROCERY LISTS
+  // Shows: dinner plate + food items orbit in and land, grocery
+  // list builds up on the side. InstancedMesh for grocery items.
+  // ============================================================
+  function animMeals() {
+    camera.position.set(0, 3, 22);
+    lights(0xFFFFFF, 0.55, 0xFFEE88, 2.8, 4, 10, 8);
+
+    // Dinner plate (flat cylinder)
+    var plateMat = new THREE.MeshPhongMaterial({ color: 0xF8F8F4, shininess: 140 });
+    var plate = mesh(new THREE.CylinderGeometry(3.0, 3.0, 0.18, 48), plateMat);
+    plate.position.set(-2, -2, 0);
+    mesh(new THREE.TorusGeometry(3.0, 0.17, 8, 48),
+      new THREE.MeshPhongMaterial({ color: 0xE5E3DC, shininess: 90 }))
+    .position.set(-2, -1.92, 0);
+
+    // Food items — individual meshes with recognisable food colours
+    var FOODS = [
+      { col: 0xE53935, label: 'Tomato',     geo: new THREE.SphereGeometry(0.48, 16, 16) },
+      { col: 0x43A047, label: 'Broccoli',   geo: new THREE.SphereGeometry(0.42, 10, 10) },
+      { col: 0xFF7043, label: 'Carrot',     geo: new THREE.CylinderGeometry(0.16, 0.28, 0.9, 8) },
+      { col: 0xFFEE58, label: 'Corn',       geo: new THREE.CylinderGeometry(0.28, 0.28, 0.75, 8) },
+      { col: 0x8D6E63, label: 'Pasta',      geo: new THREE.TorusGeometry(0.32, 0.11, 6, 12) },
+      { col: 0xEF5350, label: 'Strawberry', geo: new THREE.SphereGeometry(0.38, 10, 10) },
+    ];
+    var foodMeshes = [];
+    FOODS.forEach(function(f, i) {
+      var m = mesh(f.geo, new THREE.MeshPhongMaterial({ color: f.col, shininess: 110 }));
+      var startAngle = (i / FOODS.length) * Math.PI * 2;
+      m.position.set(-2 + Math.cos(startAngle) * 5, 1.5, Math.sin(startAngle) * 2.5);
+      m.userData = { a0: startAngle, landDelay: 1.4 + i * 0.38, landed: false, ph: rng(0, Math.PI * 2) };
+      foodMeshes.push(m);
+    });
+
+    // Grocery list card — InstancedMesh for text-line rows (3d-visualizer instanced pattern)
+    var listBg = mesh(new THREE.BoxGeometry(4.2, 5.8, 0.1),
+      new THREE.MeshPhongMaterial({ color: 0xFFFAF4, shininess: 40, transparent: true, opacity: 0 }));
+    listBg.position.set(5.8, 0.0, 0);
+
+    var LIST_N = 6;
+    var listInst = new THREE.InstancedMesh(
+      new THREE.BoxGeometry(3.2, 0.55, 0.15),
+      new THREE.MeshPhongMaterial({ color: 0xF1EFE8, shininess: 40, transparent: true, opacity: 0 }),
+      LIST_N
+    );
+    for (var i = 0; i < LIST_N; i++) {
+      dummy.position.set(5.8, 2.2 - i * 0.9, 0.06);
+      dummy.rotation.set(0, 0, 0); dummy.scale.setScalar(1);
+      dummy.updateMatrix(); listInst.setMatrixAt(i, dummy.matrix);
+    }
+    listInst.instanceMatrix.needsUpdate = true; scene.add(listInst);
+
+    // Checkbox dots on each list row — InstancedMesh
+    var cbInst = new THREE.InstancedMesh(
+      new THREE.BoxGeometry(0.32, 0.32, 0.18),
+      new THREE.MeshBasicMaterial({ color: 0x1D9E75 }),
+      LIST_N
+    );
+    for (var i = 0; i < LIST_N; i++) {
+      dummy.position.set(4.12, 2.2 - i * 0.9, 0.14);
+      dummy.rotation.set(0, 0, 0); dummy.scale.setScalar(i < 3 ? 1 : 0.01); // first 3 ticked
+      dummy.updateMatrix(); cbInst.setMatrixAt(i, dummy.matrix);
+    }
+    cbInst.instanceMatrix.needsUpdate = true; scene.add(cbInst);
+
+    var t = 0;
+    function tick() {
+      rafId = requestAnimationFrame(tick);
+      t += 0.016;
+
+      plate.rotation.y += 0.003;
+
+      foodMeshes.forEach(function(f) {
+        var d = f.userData;
+        if (!d.landed && t > d.landDelay) d.landed = true;
+        if (!d.landed) {
+          var a = d.a0 + t * 0.65;
+          var r = 5 - Math.min(t * 0.55, 2.2);
+          f.position.set(-2 + Math.cos(a) * r, 1.5 + Math.sin(t * 1.4 + d.ph) * 0.45, Math.sin(a) * r * 0.52);
+          f.rotation.y += 0.038;
+        } else {
+          // Spring land onto plate
+          var tx = -2 + Math.cos(d.a0) * 1.3, ty = -1.8, tz = Math.sin(d.a0) * 0.7;
+          f.position.x += (tx - f.position.x) * 0.13;
+          f.position.y += (ty - f.position.y) * 0.13;
+          f.position.z += (tz - f.position.z) * 0.13;
+        }
+      });
+
+      // List fades in
+      listBg.material.opacity += (0.93 - listBg.material.opacity) * 0.04;
+      var listProgress = Math.min(t / 3.5, 1);
+      listInst.material.opacity = listProgress * 0.88;
+
+      // Tick checkboxes progressively
+      for (var i = 0; i < LIST_N; i++) {
+        var tickT = Math.max(0, Math.min((t - 1.0 - i * 0.4) * 3, 1));
+        dummy.position.set(4.12, 2.2 - i * 0.9, 0.14);
+        dummy.rotation.set(0, 0, 0);
+        dummy.scale.setScalar(i < 3 ? tickT : tickT * 0.01);
+        dummy.updateMatrix(); cbInst.setMatrixAt(i, dummy.matrix);
+      }
+      cbInst.instanceMatrix.needsUpdate = true;
+
+      camera.lookAt(0, 0, 0);
+      renderer.render(scene, camera);
+    }
+    tick();
+  }
+
+  // ============================================================
+  // ANIMATION 4 — SCHOOL & TEACHER EMAILS
+  // Shows: envelope opens → letter rises → text lines form line by
+  // line → envelope seals and flies away as a sent email.
+  // ============================================================
+  function animEmail() {
+    camera.position.set(0, 0, 22);
+    lights(0xffffff, 0.5, 0x9FE1CB, 2.8, 3, 8, 10);
+
+    // Envelope body
+    var envMat = new THREE.MeshPhongMaterial({ color: 0xFFF8F0, shininess: 55 });
+    var env = new THREE.Group(); scene.add(env);
+    var envBody = new THREE.Mesh(new THREE.BoxGeometry(5.8, 4.0, 0.22), envMat);
+    env.add(envBody);
+
+    // Envelope fold seams (V-shape lines)
+    [-1, 0, 1].forEach(function(dx) {
+      var seam = new THREE.Mesh(new THREE.BoxGeometry(0.04, 4.0, 0.26),
+        new THREE.MeshBasicMaterial({ color: 0xE5E3DC, transparent: true, opacity: 0.5 }));
+      seam.position.set(dx * 1.9, 0, 0.01); env.add(seam);
+    });
+
+    // Teal wax seal
+    var sealMat = new THREE.MeshPhongMaterial({
+      color: 0x1D9E75, emissive: new THREE.Color(0x0F6E56), emissiveIntensity: 0.5, shininess: 220 });
+    var seal = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.42, 0.1, 16), sealMat);
+    seal.rotation.x = Math.PI / 2; seal.position.set(0, 0, 0.18); env.add(seal);
+
+    // Flap (opens upward)
+    var flapMat = new THREE.MeshPhongMaterial({ color: 0xF1EFE8, shininess: 40 });
+    var flap = new THREE.Mesh(new THREE.BoxGeometry(5.8, 2.4, 0.16), flapMat);
+    flap.position.set(0, 3.2, -0.05); // pivot from bottom
+    env.add(flap);
+
+    // Letter paper (rises out)
+    var letterMat = new THREE.MeshPhongMaterial({ color: 0xFFFFFF, shininess: 40, transparent: true, opacity: 0 });
+    var letter = new THREE.Mesh(new THREE.BoxGeometry(5.0, 7.0, 0.1), letterMat);
+    letter.position.set(0, -7, 0.3);
+    scene.add(letter);
+
+    // Text lines on letter — InstancedMesh (3d-visualizer instanced pattern)
+    var LINE_N = 9;
+    var lineInst = new THREE.InstancedMesh(
+      new THREE.BoxGeometry(3.8, 0.1, 0.14),
+      new THREE.MeshBasicMaterial({ color: 0x30302E, transparent: true, opacity: 0 }),
+      LINE_N
+    );
+    for (var i = 0; i < LINE_N; i++) {
+      var w = i === 0 ? 1.6 : (i % 4 === 3 ? 2.4 : 3.8);
+      dummy.position.set(i === 0 ? -1.1 : 0, 2.8 - i * 0.72, 0.1);
+      dummy.scale.set(w / 3.8, 1, 1); dummy.rotation.set(0, 0, 0);
+      dummy.updateMatrix(); lineInst.setMatrixAt(i, dummy.matrix);
+    }
+    lineInst.instanceMatrix.needsUpdate = true; letter.add(lineInst);
+
+    // School logo mark (top left of letter)
+    var logoMark = new THREE.Mesh(new THREE.SphereGeometry(0.28, 16, 16),
+      new THREE.MeshBasicMaterial({ color: 0x1D9E75 }));
+    logoMark.position.set(-2.0, 3.1, 0.1); letter.add(logoMark);
+
+    var t = 0;
+    function tick() {
+      rafId = requestAnimationFrame(tick);
+      t += 0.016;
+
+      // Phase: open flap (0–1s)
+      if (t < 1.0) {
+        flap.rotation.x = -(t) * Math.PI * 0.48;
+        seal.material.opacity = Math.max(0, 1 - t * 1.8);
+      }
+
+      // Phase: letter rises (0.7–3s)
+      if (t > 0.7) {
+        letterMat.opacity += (0.97 - letterMat.opacity) * 0.06;
+        letter.position.y += (2.8 - letter.position.y) * 0.075;
+      }
+
+      // Phase: text lines write in (1.8–4s)
+      if (t > 1.8) {
+        var lineP = Math.min((t - 1.8) / 2.2, 1);
+        lineInst.material.opacity = lineP * 0.72;
+      }
+
+      // Phase: close envelope + fly away (4.5s+)
+      if (t > 4.5) {
+        var cl = Math.min((t - 4.5) / 0.7, 1);
+        flap.rotation.x = -(1 - cl) * Math.PI * 0.48;
+        if (cl > 0.85) {
+          var spd = (t - 5.2) * 0.6;
+          env.position.set(spd * 5, spd * 2.5, 0);
+          env.rotation.z += 0.018;
+          letter.position.set(spd * 5, 2.8 + spd * 2.5, 0.3);
+        }
+      }
+
+      env.position.y += (0 - env.position.y) * 0.008;
+      env.rotation.z = Math.sin(t * 0.8) * 0.025;
+
+      camera.lookAt(0, 0, 0);
+      renderer.render(scene, camera);
+    }
+    tick();
+  }
+
+  // ============================================================
+  // ANIMATION 5 — BEHAVIOUR COACHING
+  // Shows: child figure (distressed, red, jittery) + parent figure.
+  // Parent's calm influence → child settles, heart grows between
+  // them, ripple rings expand. Colours transform red→iris.
+  // ============================================================
+  function animBehaviour() {
+    camera.position.set(0, 0, 22);
+    lights(0xffffff, 0.42, 0xC4BAE5, 2.8, 4, 8, 10);
+
+    // Parent figure (taller, composed, teal)
+    var pGroup = new THREE.Group(); pGroup.position.set(5.0, -0.5, 0); scene.add(pGroup);
+    var pMat  = new THREE.MeshPhongMaterial({ color: 0x1D9E75, shininess: 100 });
+    var pHMat = new THREE.MeshPhongMaterial({ color: 0x9FE1CB, shininess: 120 });
+    var pHead = new THREE.Mesh(new THREE.SphereGeometry(0.72, 16, 16), pHMat);
+    pHead.position.set(0, 3.4, 0); pGroup.add(pHead);
+    var pBody = new THREE.Mesh(new THREE.BoxGeometry(1.25, 2.3, 0.65), pMat);
+    pBody.position.set(0, 1.65, 0); pGroup.add(pBody);
+    var pArmL = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, 2.2, 8), pMat);
+    pArmL.position.set(-1.65, 1.9, 0); pArmL.rotation.z = Math.PI / 5; pGroup.add(pArmL);
+    [-0.38, 0.38].forEach(function(dx) {
+      var leg = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 1.9, 8), pMat);
+      leg.position.set(dx, -0.4, 0); pGroup.add(leg);
+    });
+
+    // Child figure (smaller, starts distressed red)
+    var cGroup = new THREE.Group(); cGroup.position.set(-5.0, -0.9, 0); scene.add(cGroup);
+    var cBodyMat = new THREE.MeshPhongMaterial({
+      color: 0xE53935, emissive: new THREE.Color(0xB71C1C), emissiveIntensity: 0.45, shininess: 80 });
+    var cHMat = new THREE.MeshPhongMaterial({ color: 0xFF8A80, shininess: 80 });
+    var cHead = new THREE.Mesh(new THREE.SphereGeometry(0.52, 16, 16), cHMat);
+    cHead.position.set(0, 2.4, 0); cGroup.add(cHead);
+    var cBody = new THREE.Mesh(new THREE.BoxGeometry(0.88, 1.6, 0.52), cBodyMat);
+    cBody.position.set(0, 1.1, 0); cGroup.add(cBody);
+    [-0.28, 0.28].forEach(function(dx) {
+      var cLeg = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.15, 1.3, 8), cBodyMat);
+      cLeg.position.set(dx, -0.15, 0); cGroup.add(cLeg);
+    });
+
+    // Distress particles around child
+    var DN = 45;
+    var dPos = new Float32Array(DN * 3);
+    var dGeo = new THREE.BufferGeometry();
+    dGeo.setAttribute('position', new THREE.BufferAttribute(dPos, 3));
+    var dPts = new THREE.Points(dGeo, new THREE.PointsMaterial({
+      size: 0.32, color: 0xFF5252, blending: THREE.AdditiveBlending,
+      depthWrite: false, transparent: true, opacity: 0.85 }));
+    scene.add(dPts);
+    var dD = [];
+    for (var i = 0; i < DN; i++) dD.push({ a: rng(0, Math.PI * 2), r: rng(0.9, 2.1), ph: rng(0, Math.PI * 2) });
+
+    // Heart between them (two spheres + body + cone tip)
+    var heartG = new THREE.Group(); heartG.position.set(0, 1.2, 0); heartG.scale.setScalar(0); scene.add(heartG);
+    var hMat = new THREE.MeshPhongMaterial({
+      color: 0x6A56C9, emissive: new THREE.Color(0x473688), emissiveIntensity: 0.65, shininess: 280 });
+    [[-0.44, 0.38], [0.44, 0.38]].forEach(function(p) {
+      var s = new THREE.Mesh(new THREE.SphereGeometry(0.58, 16, 16), hMat);
+      s.position.set(p[0], p[1], 0); heartG.add(s);
+    });
+    var heartBody = new THREE.Mesh(new THREE.BoxGeometry(1.18, 0.88, 0.5), hMat);
+    heartBody.position.set(0, -0.04, 0); heartG.add(heartBody);
+    var tip = new THREE.Mesh(new THREE.ConeGeometry(0.58, 0.82, 8), hMat);
+    tip.rotation.z = Math.PI; tip.position.set(0, -0.62, 0); heartG.add(tip);
+
+    // Calm ripple rings — reuse a pool of 6 meshes, scale them out
+    var RIPPLE_N = 6;
+    var rippleMeshes = [];
+    for (var i = 0; i < RIPPLE_N; i++) {
+      var rm = new THREE.Mesh(new THREE.RingGeometry(0.8, 1.0, 32),
+        new THREE.MeshBasicMaterial({ color: 0x6A56C9, transparent: true, opacity: 0,
+          side: THREE.DoubleSide, blending: THREE.AdditiveBlending, depthWrite: false }));
+      rm.position.set(0, 0.8, 0); // stay in XY plane — visible as circles from front camera
+      rm.userData = { phase: i / RIPPLE_N }; scene.add(rm);
+      rippleMeshes.push(rm);
+    }
+
+    var t = 0;
+    function lerpHex(from, to, f) {
+      var fr = (from >> 16) & 0xFF, fg = (from >> 8) & 0xFF, fb = from & 0xFF;
+      var tr = (to   >> 16) & 0xFF, tg = (to   >> 8) & 0xFF, tb = to   & 0xFF;
+      return ((Math.round(fr + (tr - fr) * f) << 16) | (Math.round(fg + (tg - fg) * f) << 8) | Math.round(fb + (tb - fb) * f));
+    }
+
+    function tick() {
+      rafId = requestAnimationFrame(tick);
+      t += 0.016;
+      var calm = Math.min(t / 5.5, 1);
+      var distress = 1 - calm;
+
+      // Child jitter fades as calm grows
+      cGroup.position.x = -5.0 + Math.sin(t * 11) * distress * 0.42;
+      cGroup.position.y = -0.9 + Math.sin(t * 8.7 + 0.8) * distress * 0.28;
+
+      // Child colour transitions from red to iris as calm increases
+      cBodyMat.color.setHex(lerpHex(0xE53935, 0x6A56C9, calm));
+      cBodyMat.emissive.setHex(lerpHex(0xB71C1C, 0x473688, calm));
+      cBodyMat.emissiveIntensity = 0.4 * distress;
+      cHMat.color.setHex(lerpHex(0xFF8A80, 0xC4BAE5, calm));
+
+      // Distress particles fade
+      dPts.material.opacity = distress * 0.82;
+      for (var i = 0; i < DN; i++) {
+        dD[i].a += 0.05 + distress * 0.14;
+        var r = dD[i].r + Math.sin(t * 4 + dD[i].ph) * 0.5 * distress;
+        dPos[i*3]   = -5.0 + Math.cos(dD[i].a) * r;
+        dPos[i*3+1] = -0.9 + Math.sin(dD[i].a) * r + 1.4;
+        dPos[i*3+2] = Math.sin(dD[i].ph + t * 2) * 0.7;
+      }
+      dGeo.attributes.position.needsUpdate = true;
+
+      // Parent arm reaches toward child (left) as calm grows — goes from upright to ~-60°
+      pArmL.rotation.z = Math.PI / 5 - calm * Math.PI / 1.5;
+
+      // Heart grows
+      heartG.scale.setScalar(calm * (1 + Math.sin(t * 2.8) * 0.055));
+
+      // Ripple rings cycle with staggered phases
+      rippleMeshes.forEach(function(rm) {
+        var rp = ((t * 0.38 + rm.userData.phase) % 1);
+        rm.scale.setScalar(0.5 + rp * 7.5);
+        rm.material.opacity = (1 - rp) * 0.48 * calm;
+      });
+
+      camera.lookAt(0, 0, 0);
+      renderer.render(scene, camera);
+    }
+    tick();
+  }
+
+  // ============================================================
+  // Dispatch table
+  // ============================================================
+  var FEATURE_CONFIG = [
+    { label: 'Ask Anything',
+      sub:   'Type like texting a friend. Get answers tailored to your child\'s age, quirks and stage. Not a generic forum post.',
+      fn: animAsk },
+    { label: 'Morning Briefing',
+      sub:   'One calm glance at what\'s ahead today: reminders, school runs, appointments. All sorted before breakfast.',
+      fn: animMorning },
+    { label: 'It Remembers',
+      sub:   'Allergies, milestones, routines, what worked last week. Parentee keeps it all so you never repeat yourself.',
+      fn: animRemember },
+    { label: 'Meals & Grocery Lists',
+      sub:   'Weekly meals your kids will actually eat, turned into a ready-to-shop grocery list with one tap.',
+      fn: animMeals },
+    { label: 'School & Teacher Emails',
+      sub:   'Need to email the teacher or write a permission note? Parentee drafts it in your voice in seconds.',
+      fn: animEmail },
+    { label: 'Behaviour Coaching',
+      sub:   'Gentle, practical strategies for tantrums, transitions and sibling squabbles. Grounded in your child\'s temperament.',
+      fn: animBehaviour },
+  ];
+
+  if (prmq.matches) return; // respect reduced motion — skip all animations
+
+  var activeIdx = 0;
+  var cycleTimer = null;
+  var cards = document.querySelectorAll('.feat-cards .card');
+  var dots  = [];
+
+  // Build nav dots
+  var dotsEl = document.getElementById('feat-dots');
+  FEATURE_CONFIG.forEach(function(_, i) {
+    var d = document.createElement('button');
+    d.className = 'feat-dot' + (i === 0 ? ' on' : '');
+    d.setAttribute('aria-label', FEATURE_CONFIG[i].label);
+    d.addEventListener('click', function() { userSwitch(i); });
+    dotsEl.appendChild(d); dots.push(d);
+  });
+
+  function sizeRenderer() {
+    var w = cvs.offsetWidth || 580;
+    var h = cvs.offsetHeight || 380;
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+
+  function switchTo(idx) {
+    activeIdx = idx;
+    clearScene();
+    sizeRenderer();
+    cards.forEach(function(c, i) { c.classList.toggle('on', i === idx); });
+    dots.forEach(function(d, i)  { d.classList.toggle('on', i === idx); });
+    labelEl.textContent = FEATURE_CONFIG[idx].label;
+    subEl.textContent   = FEATURE_CONFIG[idx].sub;
+    FEATURE_CONFIG[idx].fn();
+  }
+
+  function startCycle() {
+    clearInterval(cycleTimer);
+    cycleTimer = setInterval(function() {
+      switchTo((activeIdx + 1) % FEATURE_CONFIG.length);
+    }, 9000);
+  }
+
+  function userSwitch(idx) {
+    switchTo(idx);
+    startCycle(); // reset timer from this card
+  }
+
+  // Hover on card → switch immediately
+  cards.forEach(function(card, i) {
+    card.addEventListener('mouseenter', function() { userSwitch(i); });
+  });
+
+  // Start when canvas scrolls into view (IntersectionObserver)
+  var started = false;
+  var io = new IntersectionObserver(function(entries) {
+    if (entries[0].isIntersecting && !started) {
+      started = true;
+      switchTo(0);
+      startCycle();
+    }
+    // Resume when scrolled back into view
+    if (!entries[0].isIntersecting) cancelAnimationFrame(rafId);
+    else if (started) switchTo(activeIdx);
+  }, { threshold: 0.25 });
+  io.observe(cvs);
+
+  window.addEventListener('resize', function() {
+    if (started) sizeRenderer();
+  });
+
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) { cancelAnimationFrame(rafId); clearInterval(cycleTimer); }
+    else if (started) { switchTo(activeIdx); startCycle(); }
+  });
+})();
+
+// ===== BILLING TOGGLE =====
+function setBill(mode) {
+  document.getElementById('b-annual').classList.toggle('on', mode === 'annual');
+  document.getElementById('b-monthly').classList.toggle('on', mode === 'monthly');
+  document.querySelectorAll('[data-' + mode + ']').forEach(function (el) {
+    el.textContent = el.getAttribute('data-' + mode);
+  });
+}
+
+// ===== INTERSECTION OBSERVER — staggered 3D reveal =====
+(function () {
+  // Stagger delays for grid children
+  document.querySelectorAll('.feat-cards .card').forEach(function (el, i) {
+    el.style.transitionDelay = (i * 0.08) + 's';
+  });
+  document.querySelectorAll('.plans .plan').forEach(function (el, i) {
+    el.style.transitionDelay = (i * 0.10) + 's';
+  });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.10 });
+
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+})();
+
+/* ── i18n: multi-language support ── */
+(function () {
+  var I18N = {
+    en: {
+      page_title:'Parentee: Your calm, knowledgeable parenting companion',
+      nav_features:'Features', nav_how:'How it works', nav_pricing:'Pricing',
+      nav_faq:'FAQ', nav_get_app:'Get the App',
+      hero_eyebrow:'AI parenting companion',
+      hero_h1:'The calm, knowledgeable friend for <em>everyday parenting</em>.',
+      hero_sub:'Parentee learns about your family and gives you warm, personalised guidance for the little moments: meals, bedtime, milestones and everything in between. Judgment-free, and always there.',
+      hero_dl:'Download for iOS', hero_how:'See How It Works',
+      hero_note:'Free to start · no card required',
+      trust_1:'Private & secure by design', trust_2:'Answers in seconds, any time',
+      trust_3:'Gentle, never preachy', trust_4:'Remembers every child',
+      feat_eyebrow:'What Parentee does',
+      feat_h2:'One companion for the hundred small questions a day.',
+      feat_p:'Set up a quick profile for each child, and Parentee tailors everything to their age, stage and little quirks.',
+      feat_1:'Ask anything', feat_2:'Morning briefing', feat_3:'It remembers',
+      feat_4:'Meals & grocery lists', feat_5:'School & teacher emails', feat_6:'Behaviour coaching',
+      how_eyebrow:'How it works', how_h2:'Set up once. Helpful from day one.',
+      step1_h4:'Introduce your family', step1_p:'A two-minute profile for each child: name, age, the things that make them them.',
+      step2_h4:"Ask whatever's on your mind", step2_p:"Type it like you'd text a friend. No perfect wording needed.",
+      step3_h4:'Get guidance you can use', step3_p:'Warm, personalised, and ready to act on. Today, not someday.',
+      pricing_eyebrow:'Pricing', pricing_h2:'Start free. Upgrade when it earns its place.',
+      pricing_p:'No card to begin. Cancel anytime. Prices shown in USD.',
+      faq_eyebrow:'Common questions', faq_h2:'Everything parents want to know.',
+      faq_p:'Still wondering how Parentee fits into your family? These are the questions we hear most.',
+      faq_q1:'What is Parentee?',
+      faq_q2:'How is Parentee different from Google or ChatGPT?',
+      faq_q3:'What kinds of questions can I ask Parentee?',
+      faq_q4:'What ages does Parentee support?',
+      faq_q5:'Can Parentee help with tantrums, sleep or behaviour problems?',
+      faq_q6:'Can I use Parentee for more than one child?',
+      faq_q7:'Does Parentee replace my doctor or paediatrician?',
+      faq_q8:"How does Parentee protect my family's data and privacy?",
+      faq_q9:'How much does Parentee cost? Is there a free plan?',
+      faq_q10:'Is Parentee available on iPhone and Android?',
+      faq_a1:'Parentee is an <strong>AI parenting companion</strong> that gives you personalised, judgment-free guidance for every stage of raising a child. Unlike a generic chatbot, Parentee remembers each child\'s age, allergies, routines and temperament so every answer is tailored to your family, not a one-size-fits-all forum post.',
+      faq_a2:'Search engines return hundreds of conflicting links; ChatGPT gives generic answers that know nothing about your child. Parentee knows your child\'s name, age, quirks and history. Ask "what should Mia eat this week?" and it factors in her picky-eating stage, any intolerances you\'ve shared, and meals you\'ve already tried. <strong>Personalised parenting advice</strong>, not population-average advice.',
+      faq_a3:'Almost anything about raising your children. Parents commonly ask about <strong>sleep schedules</strong>, picky eating, meal ideas, sibling conflicts, tantrums, screen time boundaries, school and homework struggles, writing teacher emails, developmental milestones and daily routines. If it\'s one of the hundred small questions a day that don\'t warrant a doctor\'s appointment, Parentee is here for it.',
+      faq_a4:'Parentee supports children from <strong>newborn through to 17 years old</strong>. Whether you\'re managing a newborn\'s feeding schedule, navigating toddler tantrums, or talking to a twelve-year-old about peer pressure, Parentee adapts its tone and guidance to match your child\'s developmental stage.',
+      faq_a5:'Yes. The <strong>Behaviour Coaching</strong> feature offers gentle, evidence-informed strategies for tantrums, meltdowns, back-talk, sleep resistance, sibling fights and screen time battles. Advice is tailored to your child\'s temperament and age, not generic tips that may not fit your situation.',
+      faq_a6:'Yes. The <strong>Family plan supports up to 4 children</strong>, each with their own remembered profile. The Family+ plan extends this to 6 children and adds a co-parent invite so both parents share the same family account. A question about your 8-year-old never gets confused with advice for your toddler.',
+      faq_a7:'No. Parentee is a parenting companion, not a medical professional. For medical, mental-health or developmental concerns, always consult a qualified healthcare provider. Parentee is here for everyday questions, routines and decisions, not clinical diagnosis or treatment.',
+      faq_a8:'Your family\'s data is <strong>encrypted in transit and at rest</strong>. Parentee does not sell your data or use your children\'s information to train AI models. You can delete your account and all associated data at any time. We are committed to GDPR and COPPA compliance, and never store sensitive information without your explicit consent.',
+      faq_a9:'Parentee has a free <strong>Starter plan</strong> for one child. The <strong>Family plan</strong> is $7.42 per month (billed $89 annually) and covers up to 4 children with unlimited questions, meal plans, grocery lists and school email drafts. <strong>Family+</strong> at $13.25 per month adds 6 children, a co-parent invite and a birthday planner. All paid plans start with a free trial.',
+      faq_a10:'Parentee is <strong>available for iPhone</strong> on the App Store now. An Android version is in development and coming later this year. Join the early-access waitlist from the download page to be notified as soon as the Android app launches.',
+      dl_eyebrow:'Ready when you are', dl_h2:'Parenting, with a little help.',
+      dl_p:'Download Parentee and feel a little more confident, every day.',
+      dl_btn:'Download on the App Store',
+      footer_tag:'The calm, knowledgeable companion for everyday parenting.',
+      foot_col_product:'Product', foot_col_legal:'Legal', foot_col_company:'Company',
+      foot_download:'Download', foot_privacy:'Privacy Policy', foot_terms:'Terms of Use',
+      foot_sub_terms:'Subscription Terms', foot_disclaimers:'Disclaimers',
+      foot_contact:'Contact', foot_support:'Support',
+      foot_made_with:'Made with care for families.',
+      foot_disc:'Parentee provides general information and support to help you care for your child. It is not a medical, diagnostic, or emergency service and does not replace advice from a qualified professional. For medical concerns or emergencies, always contact a healthcare provider or emergency services.',
+      meta_desc:'Parentee is a warm, AI parenting companion. Personalised, judgment-free guidance for routines, meals, milestones and the everyday moments of raising a child.',
+    },
+    es: {
+      page_title:'Parentee: Tu compañero experto para la crianza del día a día',
+      nav_features:'Características', nav_how:'Cómo funciona', nav_pricing:'Precios',
+      nav_faq:'Preguntas', nav_get_app:'Descargar',
+      hero_eyebrow:'Compañero de crianza con IA',
+      hero_h1:'El amigo tranquilo y experto para la <em>crianza del día a día</em>.',
+      hero_sub:'Parentee conoce a tu familia y te ofrece orientación cálida y personalizada para los pequeños momentos: comidas, sueño, hitos y todo lo demás. Sin juicios, siempre disponible.',
+      hero_dl:'Descargar para iOS', hero_how:'Cómo funciona',
+      hero_note:'Gratis para empezar · sin tarjeta de crédito',
+      trust_1:'Privado y seguro por diseño', trust_2:'Respuestas en segundos, siempre',
+      trust_3:'Amable, sin sermones', trust_4:'Recuerda a cada hijo',
+      feat_eyebrow:'Qué hace Parentee',
+      feat_h2:'Un compañero para las cien pequeñas preguntas del día.',
+      feat_p:'Crea un perfil rápido para cada hijo y Parentee adapta todo a su edad, etapa y peculiaridades.',
+      feat_1:'Pregunta lo que sea', feat_2:'Resumen matutino', feat_3:'Lo recuerda todo',
+      feat_4:'Comidas y lista de compras', feat_5:'Correos al colegio', feat_6:'Coaching de conducta',
+      how_eyebrow:'Cómo funciona', how_h2:'Configura una vez. Útil desde el primer día.',
+      step1_h4:'Presenta a tu familia', step1_p:'Un perfil de dos minutos para cada hijo: nombre, edad, lo que los hace únicos.',
+      step2_h4:'Pregunta lo que tengas en mente', step2_p:'Escríbelo como si le enviaras un mensaje a un amigo. Sin palabras perfectas.',
+      step3_h4:'Recibe orientación que puedes usar', step3_p:'Cálida, personalizada y lista para aplicar. Hoy, no algún día.',
+      pricing_eyebrow:'Precios', pricing_h2:'Empieza gratis. Actualiza cuando lo veas necesario.',
+      pricing_p:'Sin tarjeta para empezar. Cancela cuando quieras. Precios en USD.',
+      faq_eyebrow:'Preguntas frecuentes', faq_h2:'Todo lo que los padres quieren saber.',
+      faq_p:'¿Todavía te preguntas cómo Parentee encaja en tu familia? Estas son las preguntas más comunes.',
+      faq_q1:'¿Qué es Parentee?',
+      faq_q2:'¿En qué se diferencia Parentee de Google o ChatGPT?',
+      faq_q3:'¿Qué tipo de preguntas puedo hacerle a Parentee?',
+      faq_q4:'¿Qué edades admite Parentee?',
+      faq_q5:'¿Puede Parentee ayudar con rabietas, sueño o problemas de conducta?',
+      faq_q6:'¿Puedo usar Parentee para más de un hijo?',
+      faq_q7:'¿Parentee reemplaza a mi médico o pediatra?',
+      faq_q8:'¿Cómo protege Parentee los datos de mi familia?',
+      faq_q9:'¿Cuánto cuesta Parentee? ¿Hay un plan gratuito?',
+      faq_q10:'¿Está Parentee disponible en iPhone y Android?',
+      faq_a1:'Parentee es un <strong>compañero de crianza con IA</strong> que te ofrece orientación personalizada y sin juicios para cada etapa de la crianza. A diferencia de un chatbot genérico, Parentee recuerda la edad, alergias, rutinas y temperamento de cada hijo para que cada respuesta esté adaptada a tu familia.',
+      faq_a2:'Los buscadores devuelven cientos de enlaces contradictorios; ChatGPT da respuestas genéricas sin saber nada de tu hijo. Parentee conoce el nombre, la edad, las peculiaridades y la historia de tu hijo. Pregunta "¿qué debería comer Mía esta semana?" y tendrá en cuenta su etapa de comedor selectivo, las intolerancias compartidas y las comidas ya probadas. <strong>Orientación personalizada</strong>, no consejos para el niño promedio.',
+      faq_a3:'Casi todo lo relacionado con la crianza. Los padres preguntan sobre <strong>horarios de sueño</strong>, alimentación selectiva, ideas de comida, conflictos entre hermanos, rabietas, límites con las pantallas, dificultades escolares, correos a profesores, hitos del desarrollo y rutinas diarias. Si es una de las cien pequeñas preguntas del día que no requieren visita al médico, Parentee está para responderla.',
+      faq_a4:'Parentee admite niños desde <strong>recién nacidos hasta los 17 años</strong>. Ya sea que estés gestionando el horario de alimentación de un bebé, navegando las rabietas de un niño pequeño o hablando con un adolescente sobre la presión de grupo, Parentee adapta su tono y orientación a la etapa de desarrollo de tu hijo.',
+      faq_a5:'Sí. La función de <strong>Coaching de Conducta</strong> ofrece estrategias suaves y basadas en evidencia para rabietas, colapsos, desobediencia, resistencia al sueño, peleas entre hermanos y batallas con las pantallas. El consejo está adaptado al temperamento y la edad de tu hijo.',
+      faq_a6:'Sí. El <strong>plan Family admite hasta 4 hijos</strong>, cada uno con su propio perfil recordado. El plan Family+ lo amplía a 6 hijos y añade una invitación para el otro progenitor. Una pregunta sobre tu hijo de 8 años nunca se confundirá con el consejo para tu bebé.',
+      faq_a7:'No. Parentee es un compañero de crianza, no un profesional médico. Para preocupaciones médicas, de salud mental o del desarrollo, consulta siempre a un profesional sanitario cualificado. Parentee está aquí para las preguntas cotidianas, rutinas y decisiones, no para diagnósticos clínicos.',
+      faq_a8:'Los datos de tu familia están <strong>cifrados en tránsito y en reposo</strong>. Parentee no vende tus datos ni usa la información de tus hijos para entrenar modelos de IA. Puedes eliminar tu cuenta y todos los datos en cualquier momento. Cumplimos con el RGPD y COPPA.',
+      faq_a9:'Parentee tiene un <strong>plan Starter gratuito</strong> para un hijo. El <strong>plan Family</strong> cuesta $7,42 al mes (facturado a $89 anuales) e incluye hasta 4 hijos con preguntas ilimitadas, planes de comidas, listas de compras y borradores de correos escolares. <strong>Family+</strong> a $13,25 al mes añade 6 hijos, invitación para co-progenitor y planificador de cumpleaños. Todos los planes de pago incluyen prueba gratuita.',
+      faq_a10:'Parentee está <strong>disponible para iPhone</strong> en la App Store. Una versión para Android está en desarrollo y llegará más adelante este año. Únete a la lista de acceso anticipado desde la página de descarga para ser notificado en cuanto esté disponible.',
+      dl_eyebrow:'Listo cuando tú lo estés', dl_h2:'Crianza, con un poco de ayuda.',
+      dl_p:'Descarga Parentee y siéntete un poco más seguro cada día.',
+      dl_btn:'Descargar en la App Store',
+      footer_tag:'El compañero tranquilo y experto para la crianza diaria.',
+      foot_col_product:'Producto', foot_col_legal:'Legal', foot_col_company:'Empresa',
+      foot_download:'Descargar', foot_privacy:'Política de privacidad', foot_terms:'Términos de uso',
+      foot_sub_terms:'Términos de suscripción', foot_disclaimers:'Avisos legales',
+      foot_contact:'Contacto', foot_support:'Soporte',
+      foot_made_with:'Hecho con cariño para las familias.',
+      foot_disc:'Parentee proporciona información y apoyo general para ayudarte a cuidar a tu hijo. No es un servicio médico, de diagnóstico ni de emergencias y no reemplaza el consejo de un profesional cualificado. Para preocupaciones médicas o emergencias, contacta siempre con un profesional sanitario o los servicios de emergencia.',
+      meta_desc:'Parentee es un compañero de crianza con IA. Orientación personalizada y sin juicios para rutinas, comidas, hitos y los momentos cotidianos de criar a un hijo.',
+    },
+    fr: {
+      page_title:'Parentee: Votre compagnon parental calme et expert',
+      nav_features:'Fonctionnalités', nav_how:'Comment ça marche', nav_pricing:'Tarifs',
+      nav_faq:'FAQ', nav_get_app:"Télécharger",
+      hero_eyebrow:'Compagnon parental IA',
+      hero_h1:"L'ami calme et expert pour votre <em>parentalité au quotidien</em>.",
+      hero_sub:'Parentee apprend à connaître votre famille et vous offre des conseils chaleureux et personnalisés pour les petits moments: repas, sommeil, étapes et tout le reste. Sans jugement, toujours disponible.',
+      hero_dl:'Télécharger pour iOS', hero_how:'Comment ça marche',
+      hero_note:'Gratuit pour commencer · sans carte bancaire',
+      trust_1:'Privé et sécurisé par conception', trust_2:'Réponses en secondes, à tout moment',
+      trust_3:'Doux, jamais moralisateur', trust_4:'Se souvient de chaque enfant',
+      feat_eyebrow:'Ce que fait Parentee',
+      feat_h2:'Un compagnon pour les cent petites questions de la journée.',
+      feat_p:"Créez un profil rapide pour chaque enfant, et Parentee adapte tout à son âge, son stade et ses petites particularités.",
+      feat_1:'Posez n\'importe quelle question', feat_2:'Briefing du matin', feat_3:'Il se souvient',
+      feat_4:'Repas et listes de courses', feat_5:'Emails école et enseignants', feat_6:'Coaching comportemental',
+      how_eyebrow:'Comment ça marche', how_h2:'Configurez une fois. Utile dès le premier jour.',
+      step1_h4:'Présentez votre famille', step1_p:'Un profil de deux minutes pour chaque enfant: prénom, âge, ce qui les rend uniques.',
+      step2_h4:'Posez ce qui vous passe par la tête', step2_p:"Tapez comme si vous envoyiez un SMS à un ami. Aucun mot parfait requis.",
+      step3_h4:'Recevez des conseils utilisables', step3_p:"Chaleureux, personnalisés et prêts à appliquer. Aujourd'hui, pas un jour.",
+      pricing_eyebrow:'Tarifs', pricing_h2:'Commencez gratuitement. Passez au supérieur quand ça vaut le coup.',
+      pricing_p:'Pas de carte pour commencer. Annulez à tout moment. Prix en USD.',
+      faq_eyebrow:'Questions fréquentes', faq_h2:'Tout ce que les parents veulent savoir.',
+      faq_p:"Vous vous demandez encore comment Parentee s'intègre dans votre famille? Voici les questions les plus fréquentes.",
+      faq_q1:'Qu\'est-ce que Parentee ?',
+      faq_q2:'En quoi Parentee est-il différent de Google ou ChatGPT ?',
+      faq_q3:'Quel genre de questions puis-je poser à Parentee ?',
+      faq_q4:'Quels âges Parentee prend-il en charge ?',
+      faq_q5:'Parentee peut-il aider avec les crises de colère, le sommeil ou les problèmes de comportement ?',
+      faq_q6:'Puis-je utiliser Parentee pour plusieurs enfants ?',
+      faq_q7:'Parentee remplace-t-il mon médecin ou pédiatre ?',
+      faq_q8:'Comment Parentee protège-t-il les données de ma famille ?',
+      faq_q9:'Combien coûte Parentee ? Y a-t-il un plan gratuit ?',
+      faq_q10:'Parentee est-il disponible sur iPhone et Android ?',
+      faq_a1:'Parentee est un <strong>compagnon parental IA</strong> qui vous offre des conseils personnalisés et sans jugement pour chaque étape de l\'éducation d\'un enfant. Contrairement à un chatbot générique, Parentee se souvient de l\'âge, des allergies, des routines et du tempérament de chaque enfant, afin que chaque réponse soit adaptée à votre famille.',
+      faq_a2:'Les moteurs de recherche retournent des centaines de liens contradictoires ; ChatGPT donne des réponses génériques qui ne savent rien de votre enfant. Parentee connaît le prénom, l\'âge, les particularités et l\'histoire de votre enfant. Demandez "que devrait manger Léa cette semaine ?" et il tiendra compte de sa phase d\'alimentation sélective et des repas déjà essayés. <strong>Des conseils parentaux personnalisés</strong>, pas des conseils pour l\'enfant moyen.',
+      faq_a3:'Presque tout ce qui concerne l\'éducation de vos enfants. Les parents posent souvent des questions sur les <strong>horaires de sommeil</strong>, l\'alimentation sélective, les idées de repas, les conflits fraternels, les crises de colère, les limites d\'écran, les difficultés scolaires, la rédaction d\'e-mails aux enseignants, les étapes de développement et les routines quotidiennes.',
+      faq_a4:'Parentee prend en charge les enfants de la <strong>naissance jusqu\'à 17 ans</strong>. Que vous gériez l\'alimentation d\'un nouveau-né, naviguiez les crises d\'un bambin ou parliez à un enfant de douze ans de la pression des pairs, Parentee adapte son ton et ses conseils au stade de développement de votre enfant.',
+      faq_a5:'Oui. La fonction de <strong>Coaching Comportemental</strong> propose des stratégies douces et fondées sur des preuves pour les crises de colère, les effondrements, l\'insolence, la résistance au sommeil, les disputes fraternelles et les batailles autour des écrans. Les conseils sont adaptés au tempérament et à l\'âge de votre enfant.',
+      faq_a6:'Oui. Le <strong>plan Family prend en charge jusqu\'à 4 enfants</strong>, chacun avec son propre profil mémorisé. Le plan Family+ étend cela à 6 enfants et ajoute une invitation pour le co-parent. Une question sur votre enfant de 8 ans ne sera jamais confondue avec un conseil pour votre tout-petit.',
+      faq_a7:'Non. Parentee est un compagnon parental, pas un professionnel de santé. Pour les préoccupations médicales, de santé mentale ou de développement, consultez toujours un professionnel de santé qualifié. Parentee est là pour les questions quotidiennes, les routines et les décisions, pas pour les diagnostics cliniques.',
+      faq_a8:'Les données de votre famille sont <strong>chiffrées en transit et au repos</strong>. Parentee ne vend pas vos données et n\'utilise pas les informations de vos enfants pour entraîner des modèles d\'IA. Vous pouvez supprimer votre compte et toutes les données associées à tout moment. Nous respectons le RGPD et le COPPA.',
+      faq_a9:'Parentee propose un <strong>plan Starter gratuit</strong> pour un enfant. Le <strong>plan Family</strong> est à 7,42 $ par mois (facturé 89 $ par an) et couvre jusqu\'à 4 enfants avec des questions illimitées, des plans de repas, des listes de courses et des brouillons d\'e-mails scolaires. <strong>Family+</strong> à 13,25 $ par mois ajoute 6 enfants, une invitation pour co-parent et un planificateur d\'anniversaires. Tous les plans payants commencent par un essai gratuit.',
+      faq_a10:'Parentee est <strong>disponible sur iPhone</strong> dans l\'App Store. Une version Android est en cours de développement et arrivera plus tard dans l\'année. Rejoignez la liste d\'accès anticipé depuis la page de téléchargement pour être notifié dès son lancement.',
+      dl_eyebrow:'Prêt quand vous l\'êtes', dl_h2:"La parentalité, avec un peu d'aide.",
+      dl_p:'Téléchargez Parentee et sentez-vous un peu plus confiant chaque jour.',
+      dl_btn:"Télécharger sur l'App Store",
+      footer_tag:'Le compagnon calme et expert pour la parentalité au quotidien.',
+      foot_col_product:'Produit', foot_col_legal:'Mentions légales', foot_col_company:'Entreprise',
+      foot_download:'Télécharger', foot_privacy:'Politique de confidentialité', foot_terms:"Conditions d'utilisation",
+      foot_sub_terms:"Conditions d'abonnement", foot_disclaimers:'Avertissements',
+      foot_contact:'Contact', foot_support:'Assistance',
+      foot_made_with:'Fait avec soin pour les familles.',
+      foot_disc:"Parentee fournit des informations et un soutien général pour vous aider à prendre soin de votre enfant. Ce n'est pas un service médical, de diagnostic ou d'urgence et ne remplace pas les conseils d'un professionnel qualifié. Pour toute préoccupation médicale ou urgence, contactez toujours un professionnel de santé ou les services d'urgence.",
+      meta_desc:'Parentee est un compagnon parental IA. Des conseils personnalisés et sans jugement pour les routines, repas, étapes et les moments du quotidien avec vos enfants.',
+    },
+    de: {
+      page_title:'Parentee: Ihr ruhiger, kompetenter Begleiter für den Elternalltag',
+      nav_features:'Funktionen', nav_how:'Wie es funktioniert', nav_pricing:'Preise',
+      nav_faq:'FAQ', nav_get_app:'Herunterladen',
+      hero_eyebrow:'KI-Begleiter für Eltern',
+      hero_h1:'Der ruhige, kompetente Freund für den <em>Elternalltag</em>.',
+      hero_sub:'Parentee lernt Ihre Familie kennen und gibt Ihnen herzliche, personalisierte Ratschläge für die kleinen Momente: Mahlzeiten, Schlafenszeit, Meilensteine und alles dazwischen. Ohne Vorwürfe, immer da.',
+      hero_dl:'Für iOS herunterladen', hero_how:'Wie es funktioniert',
+      hero_note:'Kostenlos starten · keine Kreditkarte nötig',
+      trust_1:'Privat und sicher by Design', trust_2:'Antworten in Sekunden, jederzeit',
+      trust_3:'Sanft, niemals belehrend', trust_4:'Erinnert sich an jedes Kind',
+      feat_eyebrow:'Was Parentee kann',
+      feat_h2:'Ein Begleiter für die hundert kleinen Fragen des Tages.',
+      feat_p:'Erstellen Sie ein schnelles Profil für jedes Kind, und Parentee passt alles an Alter, Entwicklungsstand und kleine Eigenheiten an.',
+      feat_1:'Alles fragen', feat_2:'Morgen-Briefing', feat_3:'Es merkt sich alles',
+      feat_4:'Mahlzeiten und Einkaufslisten', feat_5:'Schul-E-Mails', feat_6:'Verhaltens-Coaching',
+      how_eyebrow:'Wie es funktioniert', how_h2:'Einmal einrichten. Vom ersten Tag an hilfreich.',
+      step1_h4:'Stellen Sie Ihre Familie vor', step1_p:'Ein Zwei-Minuten-Profil für jedes Kind: Name, Alter, das was sie einzigartig macht.',
+      step2_h4:'Fragen Sie, was Sie beschäftigt', step2_p:'Tippen Sie es wie eine SMS an einen Freund. Keine perfekte Formulierung nötig.',
+      step3_h4:'Erhalten Sie umsetzbare Ratschläge', step3_p:'Herzlich, personalisiert und sofort anwendbar. Heute, nicht irgendwann.',
+      pricing_eyebrow:'Preise', pricing_h2:'Kostenlos starten. Upgraden, wenn es sich lohnt.',
+      pricing_p:'Keine Karte zum Start. Jederzeit kündigen. Preise in USD.',
+      faq_eyebrow:'Häufige Fragen', faq_h2:'Alles, was Eltern wissen wollen.',
+      faq_p:'Fragen Sie sich noch, wie Parentee in Ihre Familie passt? Das sind die häufigsten Fragen.',
+      faq_q1:'Was ist Parentee?',
+      faq_q2:'Wie unterscheidet sich Parentee von Google oder ChatGPT?',
+      faq_q3:'Welche Fragen kann ich Parentee stellen?',
+      faq_q4:'Welche Altersgruppen unterstützt Parentee?',
+      faq_q5:'Kann Parentee bei Wutanfällen, Schlaf oder Verhaltensproblemen helfen?',
+      faq_q6:'Kann ich Parentee für mehr als ein Kind nutzen?',
+      faq_q7:'Ersetzt Parentee meinen Arzt oder Kinderarzt?',
+      faq_q8:'Wie schützt Parentee die Daten meiner Familie?',
+      faq_q9:'Was kostet Parentee? Gibt es einen kostenlosen Plan?',
+      faq_q10:'Ist Parentee für iPhone und Android verfügbar?',
+      faq_a1:'Parentee ist ein <strong>KI-Begleiter für Eltern</strong>, der Ihnen personalisierte, vorwurfsfreie Ratschläge für jede Phase der Kindererziehung gibt. Im Gegensatz zu einem generischen Chatbot erinnert sich Parentee an das Alter, die Allergien, Routinen und das Temperament jedes Kindes, sodass jede Antwort auf Ihre Familie zugeschnitten ist.',
+      faq_a2:'Suchmaschinen liefern Hunderte widersprüchlicher Links; ChatGPT gibt generische Antworten, die nichts über Ihr Kind wissen. Parentee kennt den Namen, das Alter, die Eigenheiten und die Geschichte Ihres Kindes. Fragen Sie "Was sollte Mia diese Woche essen?" und es berücksichtigt ihre wählerische Essphase und bereits ausprobierte Mahlzeiten. <strong>Personalisierte Elternratschläge</strong>, keine Durchschnittsratschläge.',
+      faq_a3:'Fast alles rund um die Kindererziehung. Eltern fragen häufig nach <strong>Schlafplänen</strong>, wählerischem Essen, Mahlzeitenideen, Geschwisterkonflikten, Wutanfällen, Bildschirmzeitgrenzen, Schulschwierigkeiten, dem Schreiben von Lehrer-E-Mails, Entwicklungsmeilensteinen und Tagesroutinen.',
+      faq_a4:'Parentee unterstützt Kinder von der <strong>Geburt bis 17 Jahre</strong>. Ob Sie den Fütterungsplan eines Neugeborenen verwalten, Wutanfälle eines Kleinkinds navigieren oder mit einem Zwölfjährigen über Gruppendruck sprechen – Parentee passt Ton und Ratschläge an den Entwicklungsstand Ihres Kindes an.',
+      faq_a5:'Ja. Das <strong>Verhaltens-Coaching</strong> bietet sanfte, evidenzbasierte Strategien für Wutanfälle, Zusammenbrüche, Widerrede, Schlafwiderstand, Geschwisterstreitigkeiten und Bildschirmzeitschlachten. Die Ratschläge sind auf das Temperament und das Alter Ihres Kindes zugeschnitten.',
+      faq_a6:'Ja. Der <strong>Family-Plan unterstützt bis zu 4 Kinder</strong>, jedes mit seinem eigenen gespeicherten Profil. Der Family+-Plan erweitert dies auf 6 Kinder und fügt eine Co-Eltern-Einladung hinzu. Eine Frage zu Ihrem 8-jährigen Kind wird nie mit einem Ratschlag für Ihr Kleinkind verwechselt.',
+      faq_a7:'Nein. Parentee ist ein Elternbegleiter, kein medizinischer Fachmann. Bei medizinischen, psychischen oder entwicklungsbezogenen Bedenken wenden Sie sich bitte immer an einen qualifizierten Gesundheitsdienstleister. Parentee ist für alltägliche Fragen, Routinen und Entscheidungen da, nicht für klinische Diagnosen.',
+      faq_a8:'Die Daten Ihrer Familie sind <strong>während der Übertragung und im Ruhezustand verschlüsselt</strong>. Parentee verkauft Ihre Daten nicht und verwendet die Informationen Ihrer Kinder nicht zum Training von KI-Modellen. Sie können Ihr Konto und alle zugehörigen Daten jederzeit löschen. Wir sind der DSGVO und COPPA verpflichtet.',
+      faq_a9:'Parentee hat einen kostenlosen <strong>Starter-Plan</strong> für ein Kind. Der <strong>Family-Plan</strong> kostet 7,42 $ pro Monat (89 $ jährlich) und umfasst bis zu 4 Kinder mit unbegrenzten Fragen, Mahlzeitenplänen, Einkaufslisten und Schul-E-Mail-Entwürfen. <strong>Family+</strong> für 13,25 $ pro Monat fügt 6 Kinder, eine Co-Eltern-Einladung und einen Geburtstagsplaner hinzu. Alle kostenpflichtigen Pläne starten mit einer kostenlosen Testversion.',
+      faq_a10:'Parentee ist jetzt <strong>für iPhone</strong> im App Store verfügbar. Eine Android-Version ist in Entwicklung und kommt später in diesem Jahr. Treten Sie der Frühzugangs-Warteliste auf der Download-Seite bei, um benachrichtigt zu werden.',
+      dl_eyebrow:'Bereit, wenn Sie es sind', dl_h2:'Elternschaft, mit ein bisschen Hilfe.',
+      dl_p:'Laden Sie Parentee herunter und fühlen Sie sich jeden Tag etwas sicherer.',
+      dl_btn:'Im App Store herunterladen',
+      footer_tag:'Der ruhige, kompetente Begleiter für den Elternalltag.',
+      foot_col_product:'Produkt', foot_col_legal:'Rechtliches', foot_col_company:'Unternehmen',
+      foot_download:'Herunterladen', foot_privacy:'Datenschutzrichtlinie', foot_terms:'Nutzungsbedingungen',
+      foot_sub_terms:'Abonnementbedingungen', foot_disclaimers:'Haftungsausschlüsse',
+      foot_contact:'Kontakt', foot_support:'Support',
+      foot_made_with:'Mit Fürsorge für Familien gemacht.',
+      foot_disc:'Parentee stellt allgemeine Informationen und Unterstützung bereit, um Ihnen bei der Betreuung Ihres Kindes zu helfen. Es handelt sich nicht um einen medizinischen, diagnostischen oder Notfalldienst und ersetzt nicht den Rat eines qualifizierten Fachmanns. Wenden Sie sich bei medizinischen Bedenken oder Notfällen immer an einen Gesundheitsdienstleister oder die Notfalldienste.',
+      meta_desc:'Parentee ist ein KI-Begleiter für Eltern. Personalisierte, vorwurfsfreie Ratschläge für Routinen, Mahlzeiten, Meilensteine und den Elternalltag.',
+    },
+    pt: {
+      page_title:'Parentee: Seu companheiro parental calmo e especialista',
+      nav_features:'Recursos', nav_how:'Como funciona', nav_pricing:'Preços',
+      nav_faq:'FAQ', nav_get_app:'Baixar',
+      hero_eyebrow:'Companheiro parental com IA',
+      hero_h1:'O amigo calmo e especialista para a <em>parentalidade do dia a dia</em>.',
+      hero_sub:'Parentee conhece a sua família e oferece orientação calorosa e personalizada para os pequenos momentos: refeições, sono, marcos e tudo o mais. Sem julgamentos, sempre disponível.',
+      hero_dl:'Baixar para iOS', hero_how:'Como funciona',
+      hero_note:'Grátis para começar · sem cartão necessário',
+      trust_1:'Privado e seguro por design', trust_2:'Respostas em segundos, a qualquer hora',
+      trust_3:'Gentil, nunca pregando sermão', trust_4:'Lembra-se de cada filho',
+      feat_eyebrow:'O que o Parentee faz',
+      feat_h2:'Um companheiro para as cem pequenas perguntas do dia.',
+      feat_p:'Crie um perfil rápido para cada filho e o Parentee adapta tudo à idade, fase e pequenas particularidades.',
+      feat_1:'Pergunte qualquer coisa', feat_2:'Resumo matinal', feat_3:'Lembra de tudo',
+      feat_4:'Refeições e lista de compras', feat_5:'Emails escolares', feat_6:'Coaching comportamental',
+      how_eyebrow:'Como funciona', how_h2:'Configure uma vez. Útil desde o primeiro dia.',
+      step1_h4:'Apresente a sua família', step1_p:'Um perfil de dois minutos para cada filho: nome, idade, o que os torna únicos.',
+      step2_h4:'Pergunte o que tiver em mente', step2_p:'Escreva como se fosse uma mensagem para um amigo. Sem palavras perfeitas.',
+      step3_h4:'Receba orientação que pode usar', step3_p:'Calorosa, personalizada e pronta para aplicar. Hoje, não algum dia.',
+      pricing_eyebrow:'Preços', pricing_h2:'Comece grátis. Faça upgrade quando valer a pena.',
+      pricing_p:'Sem cartão para começar. Cancele quando quiser. Preços em USD.',
+      faq_eyebrow:'Perguntas frequentes', faq_h2:'Tudo o que os pais querem saber.',
+      faq_p:'Ainda se pergunta como o Parentee se encaixa na sua família? Estas são as perguntas mais comuns.',
+      faq_q1:'O que é o Parentee?',
+      faq_q2:'Como o Parentee é diferente do Google ou ChatGPT?',
+      faq_q3:'Que tipo de perguntas posso fazer ao Parentee?',
+      faq_q4:'Quais idades o Parentee suporta?',
+      faq_q5:'O Parentee pode ajudar com birras, sono ou problemas de comportamento?',
+      faq_q6:'Posso usar o Parentee para mais de um filho?',
+      faq_q7:'O Parentee substitui meu médico ou pediatra?',
+      faq_q8:'Como o Parentee protege os dados da minha família?',
+      faq_q9:'Quanto custa o Parentee? Tem plano gratuito?',
+      faq_q10:'O Parentee está disponível no iPhone e Android?',
+      faq_a1:'Parentee é um <strong>companheiro parental com IA</strong> que oferece orientação personalizada e sem julgamentos para cada etapa da criação de um filho. Ao contrário de um chatbot genérico, o Parentee lembra a idade, alergias, rotinas e temperamento de cada filho, para que cada resposta seja adaptada à sua família.',
+      faq_a2:'Os motores de busca retornam centenas de links contraditórios; o ChatGPT dá respostas genéricas que nada sabem sobre o seu filho. O Parentee conhece o nome, a idade, os hábitos e a história do seu filho. Pergunte "o que a Mia deveria comer esta semana?" e ele considera a fase de alimentação seletiva e as refeições já tentadas. <strong>Orientação parental personalizada</strong>, não conselhos para a criança média.',
+      faq_a3:'Quase tudo sobre a criação dos seus filhos. Os pais costumam perguntar sobre <strong>horários de sono</strong>, alimentação seletiva, ideias de refeições, conflitos entre irmãos, birras, limites de tela, dificuldades escolares, como escrever e-mails para professores, marcos de desenvolvimento e rotinas diárias.',
+      faq_a4:'Parentee suporta crianças desde o <strong>nascimento até os 17 anos</strong>. Seja gerenciando o horário de alimentação de um recém-nascido, navegando pelas birras de um toddler ou conversando com um pré-adolescente sobre pressão dos colegas, o Parentee adapta seu tom e orientação ao estágio de desenvolvimento.',
+      faq_a5:'Sim. A função de <strong>Coaching Comportamental</strong> oferece estratégias gentis e baseadas em evidências para birras, colapsos, desobediência, resistência ao sono, brigas entre irmãos e batalhas com telas. O conselho é adaptado ao temperamento e à idade do seu filho.',
+      faq_a6:'Sim. O <strong>plano Family suporta até 4 filhos</strong>, cada um com seu próprio perfil salvo. O plano Family+ estende isso para 6 filhos e adiciona um convite para co-pais. Uma pergunta sobre seu filho de 8 anos nunca será confundida com orientação para o seu bebê.',
+      faq_a7:'Não. O Parentee é um companheiro parental, não um profissional médico. Para preocupações médicas, de saúde mental ou de desenvolvimento, consulte sempre um profissional de saúde qualificado. O Parentee está aqui para perguntas cotidianas, rotinas e decisões, não para diagnósticos clínicos.',
+      faq_a8:'Os dados da sua família são <strong>criptografados em trânsito e em repouso</strong>. O Parentee não vende seus dados nem usa as informações dos seus filhos para treinar modelos de IA. Você pode excluir sua conta e todos os dados associados a qualquer momento. Somos comprometidos com o GDPR e o COPPA.',
+      faq_a9:'O Parentee tem um <strong>plano Starter gratuito</strong> para um filho. O <strong>plano Family</strong> custa $7,42 por mês (cobrado $89 anualmente) e cobre até 4 filhos com perguntas ilimitadas, planos de refeições, listas de compras e rascunhos de e-mails escolares. <strong>Family+</strong> a $13,25 por mês adiciona 6 filhos, convite para co-pais e planejador de aniversários. Todos os planos pagos começam com período de teste gratuito.',
+      faq_a10:'Parentee está <strong>disponível para iPhone</strong> na App Store agora. Uma versão Android está em desenvolvimento e chegará ainda este ano. Entre na lista de acesso antecipado na página de download para ser notificado assim que o app Android estiver disponível.',
+      dl_eyebrow:'Pronto quando você estiver', dl_h2:'Parentalidade, com um pouco de ajuda.',
+      dl_p:'Baixe o Parentee e sinta-se um pouco mais confiante todos os dias.',
+      dl_btn:'Baixar na App Store',
+      footer_tag:'O companheiro calmo e especialista para a parentalidade do dia a dia.',
+      foot_col_product:'Produto', foot_col_legal:'Legal', foot_col_company:'Empresa',
+      foot_download:'Baixar', foot_privacy:'Política de privacidade', foot_terms:'Termos de uso',
+      foot_sub_terms:'Termos de assinatura', foot_disclaimers:'Isenções de responsabilidade',
+      foot_contact:'Contato', foot_support:'Suporte',
+      foot_made_with:'Feito com cuidado para as famílias.',
+      foot_disc:'O Parentee fornece informações e suporte geral para ajudá-lo a cuidar do seu filho. Não é um serviço médico, de diagnóstico ou de emergência e não substitui o conselho de um profissional qualificado. Para preocupações médicas ou emergências, sempre entre em contato com um profissional de saúde ou serviços de emergência.',
+      meta_desc:'Parentee é um companheiro parental com IA. Orientação personalizada e sem julgamentos para rotinas, refeições, marcos e os momentos cotidianos de criar um filho.',
+    },
+    tr: {
+      page_title:'Parentee: Sakin ve bilgili ebeveynlik yardımcınız',
+      nav_features:'Özellikler', nav_how:'Nasıl Çalışır', nav_pricing:'Fiyatlar',
+      nav_faq:'SSS', nav_get_app:'İndir',
+      hero_eyebrow:'Yapay Zeka Ebeveynlik Asistanı',
+      hero_h1:'Günlük <em>ebeveynlik</em> için sakin ve bilgili arkadaşınız.',
+      hero_sub:'Parentee ailenizi tanır ve küçük anlar için sıcak, kişiselleştirilmiş rehberlik sunar: yemekler, uyku, kilometre taşları ve aradaki her şey. Yargılamadan, her zaman yanınızda.',
+      hero_dl:"iOS'ta İndir", hero_how:'Nasıl Çalışır',
+      hero_note:'Ücretsiz başla · kart gerekmez',
+      trust_1:'Tasarımıyla özel ve güvenli', trust_2:'Saniyeler içinde yanıt, her zaman',
+      trust_3:'Nazik, asla vaaz vermez', trust_4:'Her çocuğu hatırlar',
+      feat_eyebrow:'Parentee ne yapar',
+      feat_h2:'Günün yüz küçük sorusu için tek asistan.',
+      feat_p:'Her çocuk için hızlı bir profil oluşturun; Parentee her şeyi yaşına, evresine ve küçük özelliklerine göre kişiselleştirir.',
+      feat_1:'Her şeyi sor', feat_2:'Sabah özeti', feat_3:'Her şeyi hatırlar',
+      feat_4:'Yemekler ve alışveriş listeleri', feat_5:'Okul e-postaları', feat_6:'Davranış koçluğu',
+      how_eyebrow:'Nasıl çalışır', how_h2:'Bir kez kur. İlk günden itibaren yardımcı.',
+      step1_h4:'Ailenizi tanıtın', step1_p:'Her çocuk için iki dakikalık profil: isim, yaş, onları özel kılan şeyler.',
+      step2_h4:'Aklınızdakini sorun', step2_p:'Bir arkadaşa mesaj atar gibi yazın. Mükemmel kelimeler gerekmez.',
+      step3_h4:'Kullanabileceğiniz rehberlik alın', step3_p:'Sıcak, kişisel ve hemen uygulanabilir. Bugün, bir gün değil.',
+      pricing_eyebrow:'Fiyatlar', pricing_h2:'Ücretsiz başla. Değer ettiğinde yükselt.',
+      pricing_p:'Başlamak için kart yok. İstediğin zaman iptal et. Fiyatlar USD cinsinden.',
+      faq_eyebrow:'Sık sorulan sorular', faq_h2:'Ebeveynlerin merak ettikleri.',
+      faq_p:"Parentee'nin ailenize nasıl uyacağını merak ediyor musunuz? İşte en çok duyduğumuz sorular.",
+      faq_q1:'Parentee nedir?',
+      faq_q2:"Parentee Google veya ChatGPT'den nasıl farklı?",
+      faq_q3:"Parentee'ye ne tür sorular sorabilirim?",
+      faq_q4:'Parentee hangi yaşları destekler?',
+      faq_q5:'Parentee öfke nöbetleri, uyku veya davranış sorunlarında yardımcı olabilir mi?',
+      faq_q6:"Parentee'yi birden fazla çocuk için kullanabilir miyim?",
+      faq_q7:'Parentee doktorumun veya çocuk hekimimin yerini alır mı?',
+      faq_q8:'Parentee aile verilerimi nasıl korur?',
+      faq_q9:'Parentee ne kadar maliyetlidir? Ücretsiz plan var mı?',
+      faq_q10:"Parentee iPhone ve Android'de mevcut mu?",
+      faq_a1:"Parentee, bir çocuk yetiştirmenin her aşamasında size kişiselleştirilmiş, yargılamayan rehberlik sunan bir <strong>yapay zeka ebeveynlik asistanıdır</strong>. Genel bir sohbet botunun aksine, Parentee her çocuğun yaşını, alerjilerini, rutinlerini ve mizacını hatırlar; böylece her yanıt ailenize özgü olur.",
+      faq_a2:"Arama motorları yüzlerce çelişkili bağlantı döndürür; ChatGPT çocuğunuz hakkında hiçbir şey bilmeden genel yanıtlar verir. Parentee çocuğunuzun adını, yaşını, özelliklerini ve geçmişini bilir. 'Bu hafta Mia ne yemeli?' diye sorduğunuzda, onun seçici yemek evresini ve daha önce denenen yemekleri dikkate alır. <strong>Kişiselleştirilmiş ebeveynlik tavsiyeleri</strong>, ortalama çocuk için değil.",
+      faq_a3:'Çocuk yetiştirmeyle ilgili neredeyse her şeyi. Ebeveynler genellikle <strong>uyku düzeni</strong>, seçici beslenme, yemek fikirleri, kardeş çatışmaları, öfke nöbetleri, ekran süresi sınırları, okul güçlükleri, öğretmenlere e-posta yazımı, gelişim kilometre taşları ve günlük rutinler hakkında sorular sorar.',
+      faq_a4:'Parentee, <strong>yeni doğandan 17 yaşına kadar</strong> çocukları destekler. Yeni doğanın beslenme programını yönetiyor, küçük çocuğun öfke nöbetlerini aşıyor ya da on iki yaşındaki çocuğunuzla akran baskısı hakkında konuşuyor olun; Parentee tonunu çocuğunuzun gelişim evresine göre uyarlar.',
+      faq_a5:'Evet. <strong>Davranış Koçluğu</strong> özelliği, öfke nöbetleri, çöküşler, söz dinlememe, uyku direnci, kardeş kavgaları ve ekran savaşları için nazik, kanıta dayalı stratejiler sunar. Tavsiyeler, çocuğunuzun mizacına ve yaşına göre kişiselleştirilmiştir.',
+      faq_a6:'Evet. <strong>Family planı 4 çocuğa kadar</strong> destekler, her birinin kendi hatırlanan profili vardır. Family+ planı bunu 6 çocuğa genişletir ve ebeveyn ortağı daveti ekler. 8 yaşındaki çocuğunuz hakkındaki bir soru, küçük çocuğunuz için verilen tavsiyeyle asla karıştırılmaz.',
+      faq_a7:"Hayır. Parentee bir ebeveynlik asistanıdır, tıp uzmanı değil. Tıbbi, zihinsel sağlık veya gelişimsel endişeler için her zaman nitelikli bir sağlık uzmanına başvurun. Parentee günlük sorular, rutinler ve kararlar içindir, klinik tanı veya tedavi için değil.",
+      faq_a8:"Ailenizin verileri <strong>aktarım sırasında ve dinlenme halinde şifrelenir</strong>. Parentee verilerinizi satmaz veya çocuklarınızın bilgilerini yapay zeka modeli eğitmek için kullanmaz. Hesabınızı ve tüm ilişkili verileri istediğiniz zaman silebilirsiniz. GDPR ve COPPA uyumluluğuna bağlıyız.",
+      faq_a9:"Parentee'nin bir çocuk için ücretsiz <strong>Starter planı</strong> vardır. <strong>Family planı</strong> aylık $7,42'dir ($89 yıllık) ve sınırsız soru, yemek planları, alışveriş listeleri ve okul e-posta taslaklarıyla 4 çocuğa kadar destekler. Aylık $13,25'lik <strong>Family+</strong>, 6 çocuk, ebeveyn ortağı daveti ve doğum günü planlayıcısı ekler. Tüm ücretli planlar ücretsiz denemeyle başlar.",
+      faq_a10:"Parentee şu anda <strong>iPhone için</strong> App Store'da mevcut. Bir Android sürümü geliştirilmekte olup bu yıl içinde çıkacak. Android uygulaması yayınlandığında bildirim almak için indirme sayfasından erken erişim bekleme listesine katılın.",
+      dl_eyebrow:'Siz hazır olduğunuzda', dl_h2:'Ebeveynlik, biraz yardımla.',
+      dl_p:"Parentee'yi indirin ve her gün biraz daha güvende hissedin.",
+      dl_btn:"App Store'dan İndir",
+      footer_tag:'Günlük ebeveynlik için sakin ve bilgili yol arkadaşı.',
+      foot_col_product:'Ürün', foot_col_legal:'Hukuki', foot_col_company:'Şirket',
+      foot_download:'İndir', foot_privacy:'Gizlilik Politikası', foot_terms:'Kullanım Koşulları',
+      foot_sub_terms:'Abonelik Koşulları', foot_disclaimers:'Feragatnameler',
+      foot_contact:'İletişim', foot_support:'Destek',
+      foot_made_with:'Aileler için özenle yapılmıştır.',
+      foot_disc:'Parentee, çocuğunuza bakmanıza yardımcı olmak için genel bilgi ve destek sağlar. Tıbbi, tanısal veya acil durum hizmeti değildir ve nitelikli bir uzmanın tavsiyesinin yerini almaz. Tıbbi endişeler veya acil durumlar için her zaman bir sağlık profesyoneli veya acil servislerle iletişime geçin.',
+      meta_desc:'Parentee, yapay zeka destekli bir ebeveynlik asistanıdır. Rutinler, yemekler, kilometre taşları ve çocuk yetiştirmenin günlük anları için kişiselleştirilmiş, yargılamayan rehberlik.',
+    }
+  };
+
+  var LANG_LABELS = { en:'EN', es:'ES', fr:'FR', de:'DE', pt:'PT', tr:'TR' };
+  var activeLang = localStorage.getItem('parentee_lang') || 'en';
+
+  function applyLang(lang) {
+    var t = I18N[lang];
+    if (!t) return;
+    activeLang = lang;
+    localStorage.setItem('parentee_lang', lang);
+
+    /* html[lang] */
+    document.documentElement.lang = lang;
+
+    /* browser tab title */
+    if (t.page_title) document.title = t.page_title;
+
+    /* meta description */
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', t.meta_desc);
+
+    /* text nodes */
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.textContent = t[key];
+    });
+
+    /* innerHTML (for elements with <em> etc.) */
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-html');
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+
+    /* update language selector UI */
+    var curEl = document.getElementById('lang-cur');
+    if (curEl) curEl.textContent = LANG_LABELS[lang] || lang.toUpperCase();
+    document.querySelectorAll('.lang-opt').forEach(function (btn) {
+      btn.classList.toggle('on', btn.dataset.lang === lang);
+    });
+
+    /* update FEATURE_CONFIG labels if canvas is running */
+    if (typeof FEATURE_CONFIG !== 'undefined') {
+      var featureKeys = ['feat_1','feat_2','feat_3','feat_4','feat_5','feat_6'];
+      FEATURE_CONFIG.forEach(function (cfg, i) {
+        cfg.label = t[featureKeys[i]] || cfg.label;
+      });
+      /* refresh displayed label */
+      var labelEl = document.getElementById('feat-label');
+      if (labelEl && typeof activeIdx !== 'undefined') {
+        labelEl.textContent = FEATURE_CONFIG[activeIdx].label;
+      }
+    }
+  }
+
+  /* language selector toggle */
+  var sel = document.getElementById('lang-sel');
+  var btn = document.getElementById('lang-btn');
+  if (sel && btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = sel.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    document.addEventListener('click', function () {
+      sel.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+    document.querySelectorAll('.lang-opt').forEach(function (opt) {
+      opt.addEventListener('click', function (e) {
+        e.stopPropagation();
+        applyLang(opt.dataset.lang);
+        sel.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* apply on load */
+  applyLang(activeLang);
+})();
+</script>
+</body>
+</html>

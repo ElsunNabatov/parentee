@@ -1,0 +1,69 @@
+# Parentee
+
+> Parentee is an AI-powered parenting companion app that gives parents warm, personalised, judgment-free guidance for every stage of raising a child — from newborn to teenager.
+
+Parentee is available on iOS. An Android version is coming later in 2025.
+
+## What Parentee does
+
+Parentee learns about each child in your family and tailors every answer to their specific age, temperament, allergies and routine. It is not a generic chatbot. It is designed specifically for the day-to-day reality of parenting.
+
+### Core features
+
+- **Ask Anything**: Natural-language Q&A for any parenting question, answered for your specific child rather than the average child.
+- **Morning Briefing**: A daily digest of reminders, school runs, appointments and upcoming tasks — delivered before the day begins.
+- **It Remembers**: Allergies, milestones, what worked last week, routines — all stored per child so you never have to repeat context.
+- **Meal Planning & Grocery Lists**: Weekly meal suggestions your children will actually eat, converted to a ready-to-shop grocery list in one tap.
+- **School & Teacher Emails**: Drafts permission slips, absence notes and parent-teacher messages in your own voice within seconds.
+- **Behaviour Coaching**: Evidence-informed strategies for tantrums, meltdowns, sleep resistance, screen time battles and sibling conflicts — tailored to each child's temperament.
+
+## Pricing
+
+| Plan | Price | Children | Key features |
+|---|---|---|---|
+| Starter | Free | 1 child | Basic Q&A, limited questions/month |
+| Family | $89/year ($7.42/mo) | Up to 4 | Unlimited Q&A, meal plans, grocery lists, school emails, morning briefing |
+| Family+ | $159/year ($13.25/mo) | Up to 6 | Everything in Family + co-parent invite, birthday planner, local activity finder |
+
+All paid plans include a free trial. No credit card required to start.
+
+## Supported ages
+
+Newborn through 17 years old. Advice adapts to the child's developmental stage automatically.
+
+## Languages
+
+Parentee's website and app support: English, Spanish (Español), French (Français), German (Deutsch), Portuguese (Português), Turkish (Türkçe).
+
+## Important notes
+
+- Parentee is **not** a substitute for medical, psychiatric, or paediatric professional advice.
+- For any medical, developmental, or mental-health concerns, consult a qualified healthcare provider.
+- All family data is encrypted in transit and at rest.
+- Parentee does not sell user data or use children's information for AI training.
+- GDPR and COPPA compliant.
+
+## Frequently asked questions
+
+**Is Parentee free?**
+Yes, there is a free Starter plan for one child with a generous monthly question limit.
+
+**Does Parentee replace a doctor?**
+No. Parentee handles everyday parenting questions, routines and decisions. It is not a medical tool.
+
+**What makes it different from ChatGPT or Google?**
+Parentee knows your child's name, age, quirks, allergies and history. Every answer is personalised to your family, not the average child.
+
+**Is it available on Android?**
+Not yet. iOS only for now. Android is in development.
+
+## Legal documents
+
+- Privacy Policy: https://vincli.com/docs/Parentee-Privacy-Policy.pdf
+- Terms of Use: https://vincli.com/docs/Parentee-Terms-of-Use-EULA.pdf
+- Subscription Terms: https://vincli.com/docs/Parentee-Subscription-Terms-Disclosure.pdf
+- Disclaimers: https://vincli.com/docs/Parentee-In-App-Disclaimers.pdf
+
+## Contact
+
+For support: support@parentee.app
