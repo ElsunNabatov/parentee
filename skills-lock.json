@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "skills": {
+    "3d-visualizer": {
+      "source": "daffy0208/ai-dev-standards",
+      "sourceType": "github",
+      "skillPath": "skills/3d-visualizer/SKILL.md",
+      "computedHash": "b40dd41e60b3d96671deecfc1695e9f30dfce5c7d5c1622d0366a04fecfcd2f1"
+    },
+    "3d-web-experience": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "skillPath": "skills/3d-web-experience/SKILL.md",
+      "computedHash": "abf349a30764951de0ff17fe6e4b0d3a5332d3682b3b97109d7a23f813406d1a"
+    },
+    "git-city-3d-github-visualization": {
+      "source": "aradotso/trending-skills",
+      "sourceType": "github",
+      "skillPath": "skills/git-city-3d-github-visualization/SKILL.md",
+      "computedHash": "c4be47c1f48c5a46b32082c62e079b8073461de38c6c76c5132b3e7da58153b6"
+    },
+    "modly-image-to-3d": {
+      "source": "aradotso/trending-skills",
+      "sourceType": "github",
+      "skillPath": "skills/modly-image-to-3d/SKILL.md",
+      "computedHash": "1c8cbe031131a177835775aac51264b1fa05b90d06e75deeb91599f945c1ac73"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-design-guidelines/SKILL.md",
+      "computedHash": "f3bc47f890f42a44db1007ab390709ec368e4b8c089baee6b0007182236ac474"
+    }
+  }
+}
