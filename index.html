@@ -349,8 +349,10 @@
   .waitlist-input{flex:1;min-width:220px;padding:12px 20px;border:1.5px solid var(--paper-200);border-radius:100px;font-family:var(--font-body);font-size:15px;background:#fff;color:var(--paper-900);outline:none;transition:border-color .2s,box-shadow .2s}
   .waitlist-input:focus{border-color:var(--teal-600);box-shadow:0 0 0 3px rgba(29,158,117,.12)}
   .waitlist-input::placeholder{color:var(--paper-600)}
-  .waitlist-success{display:none;align-items:center;gap:10px;font-size:15px;color:var(--teal-600);font-weight:500;margin-top:16px;justify-content:center}
-  .waitlist-success svg{width:20px;height:20px;flex-shrink:0}
+  .waitlist-success{display:none;font-size:15px;color:var(--teal-600);font-weight:500;margin-top:16px;text-align:center}
+  .waitlist-success svg{width:20px;height:20px;vertical-align:middle;margin-right:6px}
+  [data-fs-error]{font-size:13px;color:var(--sand-600);text-align:center;margin-top:8px}
+  span[data-fs-error]{display:block;flex-basis:100%;padding-top:4px}
 </style>
 <script type="application/ld+json">
 {
@@ -810,16 +812,18 @@
       <span class="eyebrow" data-i18n="dl_eyebrow">Be first to know</span>
       <h2 class="serif" data-i18n="dl_h2">Parenting, with a little help.</h2>
       <p data-i18n="dl_p">Parentee is coming soon. Join the waitlist and be the first to know when we launch.</p>
-      <form class="waitlist-form" id="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="email" name="email" class="waitlist-input" placeholder="your@email.com" required autocomplete="email" aria-label="Email address">
-        <button type="submit" class="btn btn-primary"><span data-i18n="dl_btn">Join the Waitlist</span>
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </form>
-      <div class="waitlist-success" id="waitlist-success">
+      <div class="waitlist-success" data-fs-success>
         <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         You're on the list! We'll let you know as soon as we launch.
       </div>
+      <div data-fs-error></div>
+      <form class="waitlist-form" id="waitlist-form">
+        <input type="email" name="email" class="waitlist-input" placeholder="your@email.com" required autocomplete="email" aria-label="Email address" data-fs-field>
+        <button type="submit" class="btn btn-primary" data-fs-submit-btn><span data-i18n="dl_btn">Join the Waitlist</span>
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <span data-fs-error="email"></span>
+      </form>
       <div class="hero-note" style="justify-content:center;margin-top:18px">
         <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>No spam · unsubscribe anytime</span>
@@ -2747,28 +2751,9 @@ function setBill(mode) {
 })();
 </script>
 <script>
-(function () {
-  var form = document.getElementById('waitlist-form');
-  if (!form) return;
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var btn = form.querySelector('button[type="submit"]');
-    btn.disabled = true;
-    fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    }).then(function (r) {
-      if (r.ok) {
-        form.style.display = 'none';
-        var success = document.getElementById('waitlist-success');
-        if (success) success.style.display = 'flex';
-      } else {
-        btn.disabled = false;
-      }
-    }).catch(function () { btn.disabled = false; });
-  });
-})();
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#waitlist-form', formId: 'mredavba' });
 </script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
