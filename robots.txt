@@ -1,5 +1,4 @@
-# robots.txt — parentee.app
-
+# robots.txt — parent.vincli.com
 # Allow all standard crawlers
 User-agent: *
 Allow: /
@@ -12,10 +11,8 @@ Allow: /
 # OpenAI / ChatGPT
 User-agent: GPTBot
 Allow: /
-
 User-agent: ChatGPT-User
 Allow: /
-
 User-agent: OAI-SearchBot
 Allow: /
 
@@ -26,7 +23,6 @@ Allow: /
 # Anthropic / Claude
 User-agent: ClaudeBot
 Allow: /
-
 User-agent: anthropic-ai
 Allow: /
 
@@ -41,14 +37,12 @@ Allow: /
 # Meta AI
 User-agent: Meta-ExternalAgent
 Allow: /
-
 User-agent: Meta-ExternalFetcher
 Allow: /
 
 # Apple
 User-agent: Applebot
 Allow: /
-
 User-agent: Applebot-Extended
 Allow: /
 
@@ -69,4 +63,4 @@ User-agent: Brave
 Allow: /
 
 # Sitemap location
-Sitemap: https://parentee.app/sitemap.xml
+Sitemap: https://parent.vincli.com/sitemap.xml
